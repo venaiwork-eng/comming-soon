@@ -4,100 +4,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VanAI — The Catalyst for Capital</title>
+  <title>VenAI — The Catalyst for Capital</title>
   <meta name="description"
-    content="VanAI uses AI to match startups with the right VCs. Brutal pitch roasts, predictive matchmaking, and a deal desk that translates the term sheet — before you sign it." />
+    content="VenAI connects growth-stage startups with the right institutional investors. AI-powered pitch diagnostics, predictive matchmaking, and a deal desk that translates the term sheet." />
 
-  <link rel="preconnect" href="https://fonts.bunny.net" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.bunny.net/css?family=inter:300,400,500,600|lora:400,500,600|jetbrains-mono:400,500,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
 
-
-
-  <!-- Tailwind Play CDN (kept for utility classes) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- External styles -->
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            base: '#1C1917',
-            surface: '#2D2925',
-            raised: '#3A3530',
-            overlay: '#4A4540',
-            line: '#3A3530',
-            ink: '#F2EFE9',
-            'ink-muted': '#9E9892',
-            'ink-subtle': '#6B6560',
-            terra: '#D4956A',
-            'terra-deep': '#3a2e28',
-            sage: '#7DB3A0',
-            'sage-deep': '#222c28',
-            straw: '#C4B56A',
-            'straw-deep': '#2e2c22',
-            crimson: '#C47A6A',
+            navy: {
+              100: '#0D1B2A',
+              80: '#1A2E42',
+              60: '#2A4460',
+              40: '#3B5A7A',
+              20: '#8FAFC8',
+              10: '#D4E2EE',
+              5: '#EBF2F8',
+            },
+            teal: {
+              DEFAULT: '#00C9B1',
+              dark: '#009D8A',
+              light: '#B3F0E9',
+              muted: '#E0FAF7',
+            },
+            charcoal: '#1C2A38',
+            'off-white': '#F7F9FB',
+            surface: '#F0F4F8',
+            'surface-2': '#E4EBF2',
+            border: '#D0DDE8',
+            'border-light': '#E8EFF5',
+            'text-secondary': '#4A6278',
+            'text-tertiary': '#7A95A8',
           },
           fontFamily: {
-            sans: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
-            serif: ['"Lora"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
             mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
-          },
-          letterSpacing: {
-            tightest: '-0.035em',
-            tighter: '-0.025em',
-            wider2: '0.08em',
           },
         },
       },
     };
   </script>
-
-
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="bg-base text-ink">
-  <link rel="stylesheet" href="styles.css" />
-
+<body>
 
   <!-- ====================== NAV ====================== -->
-  <header id="top" class="sticky top-0 z-50 backdrop-blur bg-base/80 hair-b">
-    <div class="max-w-[1240px] mx-auto px-6 lg:px-8 py-3 flex items-center justify-between">
-      <a href="#top" class="flex items-center gap-2.5">
-        <!-- Logo mark (placeholder SVG approximation of the V/A monogram) -->
-        <svg width="34" height="32" viewBox="0 0 56 52" fill="none" xmlns="http://www.w3.org/2000/svg"
-          aria-label="VanAI logo">
-          <defs>
-            <linearGradient id="vaGrad" x1="0" y1="0" x2="56" y2="52" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#D4956A" />
-              <stop offset="55%" stop-color="#C4B56A" />
-              <stop offset="100%" stop-color="#7DB3A0" />
-            </linearGradient>
-          </defs>
-          <!-- single curving stroke approximating V + A -->
+  <header id="top" class="site-nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">
+        <svg width="30" height="28" viewBox="0 0 56 52" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-label="VenAI logo">
           <path
             d="M4 8 C 8 30, 18 46, 24 46 C 30 46, 32 36, 30 28 L 24 12 L 36 38 C 38 44, 44 48, 50 44 C 54 41, 54 32, 48 22 C 42 12, 36 6, 30 8"
-            stroke="url(#vaGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+            stroke="#00C9B1" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
         </svg>
-        <span class="font-sans font-medium text-[20px] tracking-tighter text-ink">VanAI</span>
+        <span class="brand-name">Ven<span class="brand-name-accent">AI</span></span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-7 text-[14px] text-ink-muted">
-        <a href="#features" class="ulink hover:text-ink">Features</a>
-        <a href="#reality" class="ulink hover:text-ink">Why us</a>
-        <a href="#market" class="ulink hover:text-ink">Market</a>
-        <a href="#waitlist" class="ulink hover:text-ink">Waitlist</a>
+      <nav class="nav-links">
+        <a href="#platform" class="nav-link">Platform</a>
+        <a href="#approach" class="nav-link">Approach</a>
+        <a href="#market" class="nav-link">Market</a>
+        <a href="#waitlist" class="nav-link">Access</a>
       </nav>
 
-      <div class="flex items-center gap-3">
-        <span class="hidden sm:inline-flex items-center gap-2 mono-cap">
-          <span class="dot-pulse inline-block w-1.5 h-1.5 rounded-full bg-terra"></span>
-          Coming soon · UK
+      <div class="nav-cta">
+        <span class="status-chip">
+          <span class="status-dot"></span>
+          Private beta · UK
         </span>
-        <a href="#waitlist" class="btn-terra text-[13px] py-2.5 px-4">
-          Join the waitlist
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        <a href="#waitlist" class="btn btn-primary btn-sm">
+          Request access
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
             stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14M13 5l7 7-7 7" />
           </svg>
@@ -107,639 +95,739 @@
   </header>
 
   <!-- ====================== HERO ====================== -->
-  <section class="relative overflow-hidden">
-    <div aria-hidden class="absolute inset-0 hero-grid-bg pointer-events-none"></div>
-    <div aria-hidden class="absolute inset-0 terra-sweep pointer-events-none"></div>
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container hero-inner">
 
-    <div class="relative max-w-[1240px] mx-auto px-6 lg:px-8 pt-16 pb-24">
+      <div class="eyebrow eyebrow--center">
+        <span class="eyebrow-dot"></span>
+        The Catalyst for Capital
+      </div>
 
-      <!-- Top pill -->
-      <div class="pill mb-8">
-        <span class="pill-tag">Coming soon</span>
-        <span class="text-ink-muted">UK launch — Autumn 2026 ·
-          <a href="#waitlist" class="text-terra">Apply for early access →</a>
+      <h1 class="display-1">
+        Match. Mitigate. <span class="display-italic">Multiply.</span>
+      </h1>
+
+      <p class="hero-lede">
+        VenAI is a private capital marketplace built on rigorous, AI-driven analysis. We connect growth-stage founders
+        with the institutional investors whose theses actually fit — and equip both sides with the diligence tooling to
+        close on better terms.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#waitlist" class="btn btn-primary btn-lg">
+          Request early access
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M13 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a href="#platform" class="btn btn-secondary btn-lg">
+          See the platform
+        </a>
+      </div>
+
+      <div class="trust-row">
+        <span class="trust-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          UK-hosted infrastructure
         </span>
+        <span class="trust-divider"></span>
+        <span class="trust-item">GDPR compliant</span>
+        <span class="trust-divider"></span>
+        <span class="trust-item">Companies House verified</span>
+        <span class="trust-divider"></span>
+        <span class="trust-item">FCA-aligned data handling</span>
       </div>
 
-      <!-- Hero Bento: headline left, preview right -->
-      <div class="hero-bento">
-        <!-- LEFT cell: headline -->
-        <div class="bento-cell p-8 lg:p-12 flex flex-col justify-between" style="min-height: 520px;">
-          <div>
-            <div class="overline mb-5 flex items-center gap-2">
-              <span class="inline-block w-1.5 h-1.5 rounded-full bg-terra"></span>
-              The catalyst for capital
+      <!-- Dashboard preview -->
+      <div class="dashboard-preview">
+        <div class="dashboard-chrome">
+          <div class="chrome-left">
+            <span class="chrome-dot chrome-dot--r"></span>
+            <span class="chrome-dot chrome-dot--y"></span>
+            <span class="chrome-dot chrome-dot--g"></span>
+            <span class="chrome-url">venai.app / matches</span>
+          </div>
+          <div class="chrome-right">
+            <span class="chrome-live"><span class="status-dot"></span> Live preview</span>
+          </div>
+        </div>
+
+        <div class="dashboard-body">
+          <div class="dashboard-header">
+            <div>
+              <div class="overline">Match feed · Today</div>
+              <div class="dashboard-title">3 new investors matched for <span class="text-teal-dark">Greenway Grid</span>
+              </div>
+            </div>
+            <div class="header-stats">
+              <div class="header-stat">
+                <div class="header-stat-value">87<span class="header-stat-suffix">/100</span></div>
+                <div class="overline">Avg fit</div>
+              </div>
+              <div class="header-stat">
+                <div class="header-stat-value">14</div>
+                <div class="overline">Active</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="match-grid">
+            <!-- Match card 1 — excellent -->
+            <div class="match-card match-card--featured">
+              <div class="match-card-accent" style="background:#00C9B1;"></div>
+              <div class="match-card-body">
+                <div class="match-card-head">
+                  <div class="tag tag-active">Startup pitch</div>
+                  <div class="match-score-inline match-score-inline--excellent">94%</div>
+                </div>
+                <div class="match-card-title">Alder Park Ventures</div>
+                <div class="match-card-sub">Seed · Climate infra · London · £500k–£2M</div>
+                <p class="match-card-desc">Leads first cheques into climate infrastructure. Two existing portfolio
+                  companies in adjacent grid-tech.</p>
+
+                <div class="match-bar">
+                  <div class="match-bar-track">
+                    <div class="match-bar-fill match-bar-fill--excellent" style="width:94%;"></div>
+                  </div>
+                </div>
+
+                <div class="metric-cells">
+                  <div class="metric-cell">
+                    <div class="metric-value">98%</div>
+                    <div class="metric-label">Sector fit</div>
+                  </div>
+                  <div class="metric-cell">
+                    <div class="metric-value">92%</div>
+                    <div class="metric-label">Stage fit</div>
+                  </div>
+                  <div class="metric-cell">
+                    <div class="metric-value">90%</div>
+                    <div class="metric-label">Thesis</div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <h1 class="h-display text-[clamp(48px,8.5vw,108px)]">
-              Match.<br />
-              Mitigate.<br />
-              <span class="ital">Multiply.</span>
-            </h1>
+            <!-- Match card 2 — good -->
+            <div class="match-card">
+              <div class="match-card-accent" style="background:#2B7FD4;"></div>
+              <div class="match-card-body">
+                <div class="match-card-head">
+                  <div class="tag tag-review">Startup pitch</div>
+                  <div class="match-score-inline match-score-inline--good">86%</div>
+                </div>
+                <div class="match-card-title">Northwall Capital</div>
+                <div class="match-card-sub">Seed · Generalist · Edinburgh</div>
+                <p class="match-card-desc">Generalist Seed fund with a recent climate carve-out. Cheque range overlaps
+                  yours.</p>
 
-            <p class="text-[19px] lg:text-[20px] leading-[1.45] text-ink-muted mt-7 max-w-[560px]">
-              The smartest path to your next round. We use AI to aggressively stress-test your pitch deck,
-              translate brutal term sheets, and match you with the exact right VCs. No predatory 5% broker fees.
-              Just brutal logic and faster funding.
+                <div class="match-bar">
+                  <div class="match-bar-track">
+                    <div class="match-bar-fill match-bar-fill--good" style="width:86%;"></div>
+                  </div>
+                </div>
+
+                <div class="metric-cells">
+                  <div class="metric-cell">
+                    <div class="metric-value">88%</div>
+                    <div class="metric-label">Sector fit</div>
+                  </div>
+                  <div class="metric-cell">
+                    <div class="metric-value">85%</div>
+                    <div class="metric-label">Stage fit</div>
+                  </div>
+                  <div class="metric-cell">
+                    <div class="metric-value">84%</div>
+                    <div class="metric-label">Thesis</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Match card 3 — partial -->
+            <div class="match-card">
+              <div class="match-card-accent" style="background:#F5A623;"></div>
+              <div class="match-card-body">
+                <div class="match-card-head">
+                  <div class="tag tag-diligence">Startup pitch</div>
+                  <div class="match-score-inline match-score-inline--partial">79%</div>
+                </div>
+                <div class="match-card-title">Pavement Angels</div>
+                <div class="match-card-sub">Pre-Seed · EIS syndicate · Bristol</div>
+                <p class="match-card-desc">EIS-eligible syndicate of 14 operators. Smaller tickets but high signal
+                  quality.</p>
+
+                <div class="match-bar">
+                  <div class="match-bar-track">
+                    <div class="match-bar-fill match-bar-fill--partial" style="width:79%;"></div>
+                  </div>
+                </div>
+
+                <div class="metric-cells">
+                  <div class="metric-cell">
+                    <div class="metric-value">82%</div>
+                    <div class="metric-label">Sector fit</div>
+                  </div>
+                  <div class="metric-cell">
+                    <div class="metric-value">76%</div>
+                    <div class="metric-label">Stage fit</div>
+                  </div>
+                  <div class="metric-cell">
+                    <div class="metric-value">79%</div>
+                    <div class="metric-label">Thesis</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====================== PLATFORM / FEATURES ====================== -->
+  <section id="platform" class="section section--surface">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Platform</div>
+        <h2 class="display-2">Five modules. <span class="display-italic">One closed round.</span></h2>
+        <p class="section-lede">
+          A focused stack of AI-powered tools that compresses the fundraising cycle — from first pitch to signed term
+          sheet — without sacrificing institutional rigour.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        <!-- 01 Pitch -->
+        <article class="feature-card">
+          <div class="feature-card-accent"></div>
+          <div class="feature-card-body">
+            <div class="feature-meta">
+              <div class="feature-num">01</div>
+              <div class="overline overline--teal">Pitch</div>
+            </div>
+            <h3 class="feature-title">AI Pitch Diagnostics</h3>
+            <p class="feature-desc">
+              Industry-standard interrogation of your deck's narrative, unit economics and market sizing. The AI
+              surfaces the questions an investor partner will actually ask — before they ask them.
             </p>
-          </div>
 
-          <div class="mt-10">
-            <div class="flex flex-wrap items-center gap-3">
-              <a href="#waitlist" class="btn-terra">
-                Join the waitlist
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14M13 5l7 7-7 7" />
-                </svg>
-              </a>
-              <a href="#features" class="btn-ghost">
-                See how the Deal Desk works
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 5v14M5 12l7 7 7-7" />
-                </svg>
-              </a>
-            </div>
-
-            <div class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 mono-cap">
-              <span>UK-hosted</span>
-              <span class="text-ink-subtle">·</span>
-              <span>GDPR compliant</span>
-              <span class="text-ink-subtle">·</span>
-              <span>Companies House verified</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- RIGHT cell: live preview mockup -->
-        <div class="bento-cell flex flex-col" style="min-height: 520px;">
-          <!-- chrome -->
-          <div class="flex items-center justify-between px-4 py-3 hair-b">
-            <div class="flex items-center gap-2">
-              <span class="chrome-dot bg-terra"></span>
-              <span class="chrome-dot bg-straw"></span>
-              <span class="chrome-dot bg-sage"></span>
-              <span class="ml-3 mono-cap">vanai.app / matches</span>
-            </div>
-            <span class="overline">Live preview</span>
-          </div>
-
-          <div class="p-5 lg:p-6 flex-1 flex flex-col gap-4">
-            <div class="flex items-end justify-between">
-              <div>
-                <div class="overline mb-1">Match feed · Tuesday</div>
-                <div class="font-sans text-[18px] font-medium tracking-tightest text-ink">
-                  3 new matches for <span class="text-terra">Greenway Grid</span>
+            <div class="feature-inset">
+              <div class="inset-header">
+                <span class="overline">Pitch readiness</span>
+                <span class="tag tag-diligence">Needs work</span>
+              </div>
+              <div class="inset-metric">62<span class="inset-metric-suffix">/100</span></div>
+              <div class="inset-bars">
+                <div class="bar-row">
+                  <span class="bar-label">Narrative</span>
+                  <div class="match-bar-track">
+                    <div class="match-bar-fill match-bar-fill--good" style="width:71%;"></div>
+                  </div>
+                  <span class="bar-value">71</span>
                 </div>
-              </div>
-              <div class="pill text-ink">
-                <span class="pill-tag pill-tag--sage">87 fit</span>
-              </div>
-            </div>
-
-            <!-- match rows -->
-            <div class="space-y-3">
-              <div class="bg-base hair rounded-xl p-4">
-                <div class="flex justify-between items-start gap-3">
-                  <div class="min-w-0">
-                    <div class="mono-cap mb-1">SEED · CLIMATE · LONDON</div>
-                    <div class="font-medium text-ink flex items-center gap-2">
-                      Alder Park Ventures
-                      <span class="pill-tag">New</span>
-                    </div>
-                    <div class="text-[13px] text-ink-muted mt-1.5 leading-snug">
-                      Leads first cheques into climate infra. £500k–£2M.
-                    </div>
+                <div class="bar-row">
+                  <span class="bar-label">Unit economics</span>
+                  <div class="match-bar-track">
+                    <div class="match-bar-fill match-bar-fill--low" style="width:48%;"></div>
                   </div>
-                  <div class="text-right shrink-0">
-                    <div class="font-sans text-[28px] font-medium tracking-tightest leading-none">
-                      94<span class="text-[12px] text-ink-muted">/100</span>
-                    </div>
-                    <div class="overline mt-1" style="font-size:9px;">Match</div>
-                  </div>
+                  <span class="bar-value">48</span>
                 </div>
-              </div>
-
-              <div class="bg-base hair rounded-xl p-4">
-                <div class="flex justify-between items-start gap-3">
-                  <div class="min-w-0">
-                    <div class="mono-cap mb-1">SEED · CLIMATE · EDINBURGH</div>
-                    <div class="font-medium text-ink">Northwall Capital</div>
-                    <div class="text-[13px] text-ink-muted mt-1.5 leading-snug">
-                      Generalist Seed fund with a recent climate carve-out.
-                    </div>
+                <div class="bar-row">
+                  <span class="bar-label">Market sizing</span>
+                  <div class="match-bar-track">
+                    <div class="match-bar-fill match-bar-fill--partial" style="width:67%;"></div>
                   </div>
-                  <div class="text-right shrink-0">
-                    <div class="font-sans text-[28px] font-medium tracking-tightest leading-none text-ink-muted">
-                      86<span class="text-[12px] text-ink-subtle">/100</span>
-                    </div>
-                    <div class="overline mt-1" style="font-size:9px;">Match</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="bg-base hair rounded-xl p-4 opacity-80">
-                <div class="flex justify-between items-start gap-3">
-                  <div class="min-w-0">
-                    <div class="mono-cap mb-1">PRE-SEED · CLIMATE · BRISTOL</div>
-                    <div class="font-medium text-ink">Pavement Angels</div>
-                    <div class="text-[13px] text-ink-muted mt-1.5 leading-snug">
-                      EIS syndicate of 14 operators. £25k–£150k tickets.
-                    </div>
-                  </div>
-                  <div class="text-right shrink-0">
-                    <div class="font-sans text-[28px] font-medium tracking-tightest leading-none text-ink-muted">
-                      79<span class="text-[12px] text-ink-subtle">/100</span>
-                    </div>
-                    <div class="overline mt-1" style="font-size:9px;">Match</div>
-                  </div>
+                  <span class="bar-value">67</span>
                 </div>
               </div>
             </div>
+          </div>
+        </article>
 
-            <!-- Why this match -->
-            <div class="mt-auto bg-raised rounded-xl p-4">
-              <div class="overline mb-1.5">Why this match</div>
-              <div class="text-[13px] text-ink leading-snug">
-                Climate infrastructure thesis · Pre-Seed cheque overlap · Two portfolio companies in adjacent grid-tech.
+        <!-- 02 Forecasting -->
+        <article class="feature-card">
+          <div class="feature-card-accent feature-card-accent--navy"></div>
+          <div class="feature-card-body">
+            <div class="feature-meta">
+              <div class="feature-num">02</div>
+              <div class="overline overline--navy">Forecasting</div>
+            </div>
+            <h3 class="feature-title">Financial Modelling</h3>
+            <p class="feature-desc">
+              For early-stage companies without operating volume. Generate calibrated revenue, cohort and burn scenarios
+              benchmarked against the live state of your sector.
+            </p>
+
+            <div class="feature-inset">
+              <div class="inset-header">
+                <span class="overline">Projected ARR · 24mo</span>
+                <span class="tag tag-active">3 scenarios</span>
+              </div>
+              <div class="inset-metric">£2.4M<span class="inset-metric-suffix">base</span></div>
+              <div class="forecast-bars" aria-hidden="true">
+                <div class="forecast-bar" style="height:18%;"></div>
+                <div class="forecast-bar" style="height:26%;"></div>
+                <div class="forecast-bar" style="height:32%;"></div>
+                <div class="forecast-bar" style="height:44%;"></div>
+                <div class="forecast-bar" style="height:51%;"></div>
+                <div class="forecast-bar" style="height:62%;"></div>
+                <div class="forecast-bar forecast-bar--accent" style="height:74%;"></div>
+                <div class="forecast-bar forecast-bar--accent" style="height:88%;"></div>
               </div>
             </div>
           </div>
-        </div>
+        </article>
+
+        <!-- 03 Matchmaking -->
+        <article class="feature-card">
+          <div class="feature-card-accent"></div>
+          <div class="feature-card-body">
+            <div class="feature-meta">
+              <div class="feature-num">03</div>
+              <div class="overline overline--teal">Matchmaking</div>
+            </div>
+            <h3 class="feature-title">Relevancy Algorithm</h3>
+            <p class="feature-desc">
+              Our internal matchmaking engine ranks every introduction by mutual fit — using the VC's stated thesis,
+              prior cheques and sector depth, weighted against your stage and capital ask.
+            </p>
+
+            <div class="feature-inset">
+              <div class="inset-header">
+                <span class="overline">Top matches this week</span>
+                <span class="tag tag-active">14 active</span>
+              </div>
+              <div class="chip-row">
+                <span class="vc-chip">
+                  <span class="vc-chip-bar"><span style="width:94%;"></span></span>
+                  <span class="vc-chip-name">Alder Park</span>
+                  <span class="vc-chip-score">94</span>
+                </span>
+                <span class="vc-chip">
+                  <span class="vc-chip-bar"><span style="width:86%;"></span></span>
+                  <span class="vc-chip-name">Northwall</span>
+                  <span class="vc-chip-score">86</span>
+                </span>
+                <span class="vc-chip">
+                  <span class="vc-chip-bar"><span style="width:79%;"></span></span>
+                  <span class="vc-chip-name">Pavement</span>
+                  <span class="vc-chip-score">79</span>
+                </span>
+                <span class="vc-chip vc-chip--muted">+ 11 more</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 04 Proposal -->
+        <article class="feature-card">
+          <div class="feature-card-accent feature-card-accent--navy"></div>
+          <div class="feature-card-body">
+            <div class="feature-meta">
+              <div class="feature-num">04</div>
+              <div class="overline overline--navy">Proposal</div>
+            </div>
+            <h3 class="feature-title">Proposal Builder</h3>
+            <p class="feature-desc">
+              A structured proposal generated alongside your pitch — capturing the operational, financial and legal
+              substance an investor needs to move to diligence with conviction.
+            </p>
+
+            <div class="feature-inset">
+              <div class="overline">Proposal sections · 8 of 11 complete</div>
+              <div class="checklist">
+                <div class="check-item check-item--done"><span class="check-mark">✓</span>Company overview</div>
+                <div class="check-item check-item--done"><span class="check-mark">✓</span>Market analysis</div>
+                <div class="check-item check-item--done"><span class="check-mark">✓</span>Financial projections</div>
+                <div class="check-item check-item--done"><span class="check-mark">✓</span>Cap table</div>
+                <div class="check-item"><span class="check-mark">○</span>Use of funds</div>
+                <div class="check-item"><span class="check-mark">○</span>Risk register</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 05 Deal Desk -->
+        <article class="feature-card feature-card--wide">
+          <div class="feature-card-accent"></div>
+          <div class="feature-card-body">
+            <div class="feature-meta">
+              <div class="feature-num">05</div>
+              <div class="overline overline--teal">Deal Desk</div>
+            </div>
+            <h3 class="feature-title">Legal Language Translator</h3>
+            <p class="feature-desc">
+              When deals approach signature, the term sheet, SHA and SPA arrive in dense legal language. The Deal Desk
+              decomposes every clause into plain English and flags the commercial mechanics — including the gotchas a
+              casual read will miss.
+            </p>
+
+            <div class="legal-grid">
+              <div class="legal-clause">
+                <div class="clause-head">
+                  <span class="overline">Clause 7.2</span>
+                  <span class="tag tag-closed">Founder-adverse</span>
+                </div>
+                <div class="clause-original">2× participating liquidation preference</div>
+                <div class="clause-plain">
+                  → On exit, the fund collects <strong>2× their cheque</strong> off the top, <em>then</em> shares the
+                  remainder pro rata. On a £4M exit of a £2M raise, founders receive ~<strong>£0</strong>.
+                </div>
+              </div>
+              <div class="legal-clause">
+                <div class="clause-head">
+                  <span class="overline">Clause 11.4</span>
+                  <span class="tag tag-active">Standard</span>
+                </div>
+                <div class="clause-original">Pro-rata participation rights</div>
+                <div class="clause-plain">
+                  → The investor reserves the right (not obligation) to maintain their ownership percentage by
+                  participating in your next round. Market standard.
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ====================== FEATURES BENTO ====================== -->
-  <section id="features" class="hair-t bg-base">
-    <div class="max-w-[1240px] mx-auto px-6 lg:px-8 py-20 lg:py-28">
-
-      <div class="max-w-[760px] mb-12">
-        <div class="overline mb-3 text-terra">Core features</div>
-        <h2 class="h-display text-[clamp(34px,5vw,56px)] mb-4">
-          Three weapons. <span class="ital">Zero corporate fluff.</span>
+  <!-- ====================== APPROACH / COMPARISON ====================== -->
+  <section id="approach" class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Our approach</div>
+        <h2 class="display-2">Built for institutional rigour. <span class="display-italic">Without the friction.</span>
         </h2>
-        <p class="text-[18px] text-ink-muted leading-[1.5]">
-          A focused stack of AI tools built for one job — getting your round closed on better terms, faster.
+        <p class="section-lede">
+          Traditional fundraising costs founders months of runway and investors hours of low-signal inbound. VenAI
+          rebuilds the connective tissue.
         </p>
       </div>
 
-      <div class="bento-features">
-        <!-- Card 1 — left, tall -->
-        <div class="bento-cell cell-1 p-8 lg:p-10 flex flex-col">
-          <div class="flex items-start justify-between mb-8">
-            <div class="w-12 h-12 rounded-xl flex items-center justify-center"
-              style="background: var(--ws-accent-terra); color:#1C1917;">
-              <!-- bolt -->
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" />
-              </svg>
+      <div class="comparison-card">
+        <div class="comparison-grid">
+          <div class="comparison-side comparison-side--legacy">
+            <div class="comparison-head">
+              <span class="tag tag-closed">The legacy path</span>
             </div>
-            <span class="mono-cap">01 / Pitch</span>
-          </div>
-
-          <h3 class="font-sans text-[28px] lg:text-[32px] font-medium tracking-tighter text-ink leading-[1.05] mb-4">
-            The Brutal Pitch Roast.
-          </h3>
-          <p class="text-[16px] text-ink-muted leading-[1.55] mb-8">
-            Stop guessing why they passed. Our AI stress-tests your deck's narrative and financial unit economics
-            <em>before</em> an investor sees it. We find the holes so you don't fall in them.
-          </p>
-
-          <!-- Mini visual: pitch score breakdown -->
-          <div class="mt-auto bg-base hair rounded-xl p-5">
-            <div class="flex items-end justify-between mb-4">
-              <div>
-                <div class="mono-cap mb-1">Pitch readiness</div>
-                <div class="font-sans text-[40px] font-medium tracking-tightest leading-none">
-                  62<span class="text-[14px] text-ink-muted">/100</span>
+            <ul class="comparison-list">
+              <li>
+                <span class="list-icon list-icon--neg">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 6l12 12M18 6L6 18" />
+                  </svg>
+                </span>
+                <div>
+                  <div class="list-title">6 months of manual sourcing</div>
+                  <div class="list-desc">Scraping LinkedIn, cold introductions, no signal on fit.</div>
                 </div>
-              </div>
-              <span class="pill-tag pill-tag--straw">Needs work</span>
-            </div>
-            <div class="space-y-2.5">
-              <div>
-                <div class="flex justify-between text-[12px] mb-1.5">
-                  <span class="text-ink-muted">Narrative</span>
-                  <span class="mono-cap">71</span>
-                </div>
-                <div class="h-1.5 bg-raised rounded-full overflow-hidden">
-                  <div class="h-full bg-sage rounded-full" style="width:71%;"></div>
-                </div>
-              </div>
-              <div>
-                <div class="flex justify-between text-[12px] mb-1.5">
-                  <span class="text-ink-muted">Unit economics</span>
-                  <span class="mono-cap">48</span>
-                </div>
-                <div class="h-1.5 bg-raised rounded-full overflow-hidden">
-                  <div class="h-full bg-crimson rounded-full" style="width:48%;"></div>
-                </div>
-              </div>
-              <div>
-                <div class="flex justify-between text-[12px] mb-1.5">
-                  <span class="text-ink-muted">Market sizing</span>
-                  <span class="mono-cap">67</span>
-                </div>
-                <div class="h-1.5 bg-raised rounded-full overflow-hidden">
-                  <div class="h-full bg-straw rounded-full" style="width:67%;"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 2 — top right, wide -->
-        <div class="bento-cell cell-2 p-8 lg:p-10 flex flex-col justify-between">
-          <div class="flex items-start justify-between mb-6">
-            <div class="w-12 h-12 rounded-xl flex items-center justify-center"
-              style="background: var(--ws-accent-sage); color:#1C1917;">
-              <!-- target -->
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="9" />
-                <circle cx="12" cy="12" r="5" />
-                <circle cx="12" cy="12" r="1.5" fill="currentColor" />
-              </svg>
-            </div>
-            <span class="mono-cap">02 / Match</span>
-          </div>
-
-          <div>
-            <h3 class="font-sans text-[26px] lg:text-[30px] font-medium tracking-tighter text-ink leading-[1.05] mb-3">
-              Predictive Matchmaking.
-            </h3>
-            <p class="text-[15.5px] text-ink-muted leading-[1.55] max-w-[620px]">
-              Spray-and-pray emails are dead. We map your startup's DNA to the real-time public theses of top UK VCs.
-              You only talk to investors who are actively buying what you're building.
-            </p>
-          </div>
-
-          <!-- Inline VC chips -->
-          <div class="mt-6 flex flex-wrap gap-2">
-            <span class="pill"><span class="w-1.5 h-1.5 rounded-full bg-terra"></span>Alder Park · 94</span>
-            <span class="pill"><span class="w-1.5 h-1.5 rounded-full bg-sage"></span>Northwall · 86</span>
-            <span class="pill"><span class="w-1.5 h-1.5 rounded-full bg-straw"></span>Pavement · 79</span>
-            <span class="pill text-ink-subtle"><span class="w-1.5 h-1.5 rounded-full bg-overlay"></span>+ 11 more</span>
-          </div>
-        </div>
-
-        <!-- Card 3 — bottom right, wide -->
-        <div class="bento-cell cell-3 p-8 lg:p-10 flex flex-col justify-between">
-          <div class="flex items-start justify-between mb-6">
-            <div class="w-12 h-12 rounded-xl flex items-center justify-center"
-              style="background: var(--ws-accent-straw); color:#1C1917;">
-              <!-- shield -->
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z" />
-                <path d="M9 12l2 2 4-4" />
-              </svg>
-            </div>
-            <span class="mono-cap">03 / Deal Desk</span>
-          </div>
-
-          <div>
-            <h3 class="font-sans text-[26px] lg:text-[30px] font-medium tracking-tighter text-ink leading-[1.05] mb-3">
-              The AI Deal Desk.
-            </h3>
-            <p class="text-[15.5px] text-ink-muted leading-[1.55] max-w-[620px]">
-              We translate complex legal term sheets into plain English. We flag the commercial traps, liquidate
-              the jargon, and protect your equity to the final bank transfer.
-            </p>
-          </div>
-
-          <!-- Inline clause snippet -->
-          <div class="mt-6 bg-base hair rounded-xl p-4 font-mono text-[12px] text-ink-muted leading-relaxed">
-            <div class="flex items-start gap-2">
-              <span class="pill-tag pill-tag--crimson">Trap</span>
-              <span class="text-ink">2× participating liquidation preference</span>
-            </div>
-            <div class="mt-2 text-ink-muted">
-              → The fund collects <span class="text-ink">2× their cheque</span> off the top, <em>then</em> shares the
-              rest.
-              On a £4M exit, founders walk with <span class="text-crimson font-medium">~£0</span>.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====================== REALITY CHECK ====================== -->
-  <section id="reality" class="hair-t bg-surface">
-    <div class="max-w-[1240px] mx-auto px-6 lg:px-8 py-20 lg:py-28">
-
-      <div class="max-w-[760px] mb-12">
-        <div class="overline mb-3 text-terra">Reality check</div>
-        <h2 class="h-display text-[clamp(34px,5vw,56px)] mb-4">
-          Traditional fundraising <span class="ital">is broken.</span>
-        </h2>
-        <p class="text-[18px] text-ink-muted leading-[1.5]">
-          The current path bleeds runway, founder hours, and equity — for outcomes nobody can predict. Here's the
-          delta.
-        </p>
-      </div>
-
-      <div class="bento-cell">
-        <div class="reality">
-          <!-- Old way -->
-          <div class="side-old p-8 lg:p-10 hair-r">
-            <div class="flex items-center gap-3 mb-6">
-              <span class="pill-tag pill-tag--old">The Old Way</span>
-              <span class="mono-cap">— slow, expensive, opaque</span>
-            </div>
-
-            <ul class="space-y-4">
-              <li class="flex items-start gap-3">
-                <svg class="mt-1 shrink-0 text-crimson" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M6 6l12 12M18 6L6 18" />
-                </svg>
-                <span class="text-ink leading-[1.45]">Waste <strong class="text-ink">6 months</strong> manually scraping
-                  LinkedIn.</span>
               </li>
-              <li class="flex items-start gap-3">
-                <svg class="mt-1 shrink-0 text-crimson" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M6 6l12 12M18 6L6 18" />
-                </svg>
-                <span class="text-ink leading-[1.45]">Get silent rejections without feedback.</span>
+              <li>
+                <span class="list-icon list-icon--neg">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 6l12 12M18 6L6 18" />
+                  </svg>
+                </span>
+                <div>
+                  <div class="list-title">Silent rejections without context</div>
+                  <div class="list-desc">No structured feedback. No learning between attempts.</div>
+                </div>
               </li>
-              <li class="flex items-start gap-3">
-                <svg class="mt-1 shrink-0 text-crimson" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M6 6l12 12M18 6L6 18" />
-                </svg>
-                <span class="text-ink leading-[1.45]">Pay a broker a <strong class="text-ink">5% "success fee"</strong>
-                  from your runway.</span>
+              <li>
+                <span class="list-icon list-icon--neg">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 6l12 12M18 6L6 18" />
+                  </svg>
+                </span>
+                <div>
+                  <div class="list-title">5% broker success fees</div>
+                  <div class="list-desc">Taken directly from the runway you just raised.</div>
+                </div>
               </li>
-              <li class="flex items-start gap-3">
-                <svg class="mt-1 shrink-0 text-crimson" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M6 6l12 12M18 6L6 18" />
-                </svg>
-                <span class="text-ink leading-[1.45]">Pay <strong class="text-ink">£10k</strong> to a solicitor just to
-                  understand the term sheet.</span>
+              <li>
+                <span class="list-icon list-icon--neg">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 6l12 12M18 6L6 18" />
+                  </svg>
+                </span>
+                <div>
+                  <div class="list-title">£10k+ to interpret the term sheet</div>
+                  <div class="list-desc">Solicitor fees on every deal, often after key clauses are agreed.</div>
+                </div>
               </li>
             </ul>
           </div>
 
-          <!-- VanAI way -->
-          <div class="p-8 lg:p-10 relative">
-            <div aria-hidden class="absolute inset-0 pointer-events-none"
-              style="background: radial-gradient(ellipse 60% 50% at 80% 0%, rgba(212,149,106,0.10), transparent 60%);">
-            </div>
-            <div class="relative">
-              <div class="flex items-center gap-3 mb-6">
-                <span class="pill-tag">The VanAI Way</span>
-                <span class="mono-cap">— fast, transparent, founder-aligned</span>
-              </div>
+          <div class="comparison-divider" aria-hidden="true"></div>
 
-              <ul class="space-y-4">
-                <li class="flex items-start gap-3">
-                  <svg class="mt-1 shrink-0 text-sage" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12l5 5 9-11" />
-                  </svg>
-                  <span class="text-ink leading-[1.45]">AI maps your exact VC matches <strong class="text-ink">in
-                      minutes</strong>.</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="mt-1 shrink-0 text-sage" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12l5 5 9-11" />
-                  </svg>
-                  <span class="text-ink leading-[1.45]">Instant, actionable feedback on your financial logic.</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="mt-1 shrink-0 text-sage" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12l5 5 9-11" />
-                  </svg>
-                  <span class="text-ink leading-[1.45]"><strong class="text-ink">Transparent, flat-fee tiers.</strong>
-                    You keep your equity.</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="mt-1 shrink-0 text-sage" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12l5 5 9-11" />
-                  </svg>
-                  <span class="text-ink leading-[1.45]">The AI Deal Desk decodes the legalese instantly.</span>
-                </li>
-              </ul>
+          <div class="comparison-side comparison-side--venai">
+            <div class="comparison-head">
+              <span class="tag tag-active">The VenAI path</span>
             </div>
+            <ul class="comparison-list">
+              <li>
+                <span class="list-icon list-icon--pos">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12l5 5 9-11" />
+                  </svg>
+                </span>
+                <div>
+                  <div class="list-title">Ranked matches in minutes</div>
+                  <div class="list-desc">Every introduction scored against the investor's actual thesis.</div>
+                </div>
+              </li>
+              <li>
+                <span class="list-icon list-icon--pos">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12l5 5 9-11" />
+                  </svg>
+                </span>
+                <div>
+                  <div class="list-title">Structured pitch feedback</div>
+                  <div class="list-desc">Actionable diagnostics on narrative, financials and positioning.</div>
+                </div>
+              </li>
+              <li>
+                <span class="list-icon list-icon--pos">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12l5 5 9-11" />
+                  </svg>
+                </span>
+                <div>
+                  <div class="list-title">Transparent flat-fee tiers</div>
+                  <div class="list-desc">No success fee, no equity dilution. Your round, your terms.</div>
+                </div>
+              </li>
+              <li>
+                <span class="list-icon list-icon--pos">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12l5 5 9-11" />
+                  </svg>
+                </span>
+                <div>
+                  <div class="list-title">Term sheets decoded instantly</div>
+                  <div class="list-desc">Plain-English breakdown of every clause, gotcha-flagged.</div>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ====================== MARKET STATS ====================== -->
-  <section id="market" class="hair-t bg-base">
-    <div class="max-w-[1240px] mx-auto px-6 lg:px-8 py-20 lg:py-28">
-
-      <div class="max-w-[760px] mb-12">
-        <div class="overline mb-3 text-terra">Market opportunity</div>
-        <h2 class="h-display text-[clamp(34px,5vw,56px)] mb-4">
-          A market built on warm intros. <span class="ital">We're rebuilding the wiring.</span>
+  <!-- ====================== MARKET ====================== -->
+  <section id="market" class="section section--surface">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Market opportunity</div>
+        <h2 class="display-2">A market gated by warm intros. <span class="display-italic">Rebuilt for signal.</span>
         </h2>
-        <p class="text-[18px] text-ink-muted leading-[1.5]">
-          The UK is the deepest VC market in Europe. It's also the most relationship-gated. Both sides waste time on
-          the wrong introductions.
+        <p class="section-lede">
+          The UK is the deepest venture market in Europe. It is also the most relationship-gated — leaving capital and
+          conviction on opposite sides of an invisible wall.
         </p>
       </div>
 
-      <div class="bento-cell">
-        <div class="metrics">
-          <div class="p-7 lg:p-8 hair-r">
-            <div class="font-sans text-[clamp(36px,5vw,56px)] font-medium tracking-tightest leading-none text-ink mb-3">
-              £17.1B
-            </div>
-            <div class="font-sans text-[14px] text-ink-muted leading-[1.45]">UK VC market size, 2024</div>
-          </div>
-          <div class="p-7 lg:p-8 hair-r">
-            <div class="font-sans text-[clamp(36px,5vw,56px)] font-medium tracking-tightest leading-none text-ink mb-3">
-              1,200<span class="text-terra">+</span>
-            </div>
-            <div class="font-sans text-[14px] text-ink-muted leading-[1.45]">Active VC firms in the UK</div>
-          </div>
-          <div class="p-7 lg:p-8 hair-r">
-            <div class="font-sans text-[clamp(36px,5vw,56px)] font-medium tracking-tightest leading-none text-ink mb-3">
-              18k<span class="text-terra">+</span>
-            </div>
-            <div class="font-sans text-[14px] text-ink-muted leading-[1.45]">Registered angel investors</div>
-          </div>
-          <div class="p-7 lg:p-8">
-            <div class="font-sans text-[clamp(36px,5vw,56px)] font-medium tracking-tightest leading-none text-ink mb-3">
-              700k<span class="text-terra">+</span>
-            </div>
-            <div class="font-sans text-[14px] text-ink-muted leading-[1.45]">SMEs seeking growth capital</div>
-          </div>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-value">£8B</div>
+          <div class="stat-label">UK VC market size, 2024</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">1,200<span class="stat-plus">+</span></div>
+          <div class="stat-label">Active VC firms in the UK</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">18k<span class="stat-plus">+</span></div>
+          <div class="stat-label">Registered angel investors</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">700k<span class="stat-plus">+</span></div>
+          <div class="stat-label">SMEs seeking growth capital</div>
         </div>
       </div>
 
-      <!-- Secondary stats row -->
-      <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="bento-cell p-6">
-          <div class="overline mb-2">Funding access</div>
-          <div class="font-sans text-[32px] font-medium tracking-tightest leading-none text-ink mb-2">74%</div>
-          <p class="text-[14px] text-ink-muted leading-snug">of UK startups cite funding access as their #1 growth
-            barrier.
-            <span class="mono-cap block mt-3">— British Business Bank, 2024</span>
-          </p>
+      <div class="insight-grid">
+        <div class="insight-card">
+          <div class="overline">Funding access</div>
+          <div class="insight-value">74%</div>
+          <p class="insight-desc">of UK startups cite funding access as their primary growth barrier.</p>
+          <div class="insight-source">British Business Bank · 2024</div>
         </div>
-        <div class="bento-cell p-6">
-          <div class="overline mb-2">Filtering tax</div>
-          <div class="font-sans text-[32px] font-medium tracking-tightest leading-none text-ink mb-2">30–40%</div>
-          <p class="text-[14px] text-ink-muted leading-snug">of a VC partner's sourcing time is spent filtering
-            irrelevant inbound.
-            <span class="mono-cap block mt-3">— BVCA Sourcing Survey, 2024</span>
-          </p>
+        <div class="insight-card">
+          <div class="overline">Filtering tax</div>
+          <div class="insight-value">30–40%</div>
+          <p class="insight-desc">of a VC partner's sourcing time is spent filtering irrelevant inbound.</p>
+          <div class="insight-source">BVCA Sourcing Survey · 2024</div>
         </div>
-        <div class="bento-cell p-6">
-          <div class="overline mb-2">Warm intro bias</div>
-          <div class="font-sans text-[32px] font-medium tracking-tightest leading-none text-ink mb-2">8 in 10</div>
-          <p class="text-[14px] text-ink-muted leading-snug">UK Seed deals still originate from a warm introduction.
-            <span class="mono-cap block mt-3">— Atomico State of European Tech, 2024</span>
-          </p>
+        <div class="insight-card">
+          <div class="overline">Warm intro bias</div>
+          <div class="insight-value">8 in 10</div>
+          <p class="insight-desc">UK Seed deals still originate from a warm introduction.</p>
+          <div class="insight-source">Atomico State of European Tech · 2024</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ====================== WAITLIST ====================== -->
-  <section id="waitlist" class="hair-t bg-surface">
-    <div class="max-w-[1240px] mx-auto px-6 lg:px-8 py-20 lg:py-28">
-
+  <section id="waitlist" class="section">
+    <div class="container">
       <div class="waitlist-grid">
-        <div>
-          <div class="overline mb-3 text-terra">Early access</div>
-          <h2 class="h-display text-[clamp(34px,5vw,52px)] mb-4">
-            Be first. <span class="ital">Get matched earlier.</span>
-          </h2>
-          <p class="text-[18px] text-ink-muted leading-[1.5] mb-6">
-            VanAI is in final development. Join the waitlist and you'll get early access, priority matching weight
-            at launch, and three months free on any paid plan.
+        <div class="waitlist-intro">
+          <div class="eyebrow">Early access</div>
+          <h2 class="display-2">Be first. <span class="display-italic">Get matched earlier.</span></h2>
+          <p class="section-lede">
+            VenAI is in final development ahead of UK launch in Autumn 2026. Request access to be onboarded in the first
+            cohort — with priority matching weight at launch and three months free on any paid tier.
           </p>
 
-          <ul class="space-y-3">
-            <li class="flex items-center gap-3 text-[14px] text-ink-muted">
-              <svg class="text-terra shrink-0" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12l5 5 9-11" />
-              </svg>
-              No spam. Unsubscribe any time.
-            </li>
-            <li class="flex items-center gap-3 text-[14px] text-ink-muted">
-              <svg class="text-terra shrink-0" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12l5 5 9-11" />
-              </svg>
-              GDPR compliant — your data stays in the UK.
-            </li>
-            <li class="flex items-center gap-3 text-[14px] text-ink-muted">
-              <svg class="text-terra shrink-0" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12l5 5 9-11" />
-              </svg>
-              Founder &amp; investor onboarding open separately.
-            </li>
-          </ul>
-        </div>
-
-        <div class="bento-cell p-2">
-          <!-- Tabs -->
-          <div class="p-3 pb-2 flex justify-center">
-            <div class="tabs" role="tablist">
-              <button id="tab-founder" class="active" data-tab="founder" type="button">I'm a founder</button>
-              <button id="tab-vc" data-tab="vc" type="button">I'm a VC</button>
-            </div>
-          </div>
-
-          <div class="p-5 lg:p-6">
-            <form id="waitlist-form" novalidate>
-              <div class="overline mb-5" id="form-label">Founder application · 30 seconds</div>
-
-              <div class="space-y-3">
-                <div>
-                  <label class="text-[12px] text-ink-muted mb-1.5 block">Work email</label>
-                  <input type="email" id="email" required placeholder="you@startup.co" />
-                </div>
-
-                <div>
-                  <label class="text-[12px] text-ink-muted mb-1.5 block" id="org-label">Company name</label>
-                  <input type="text" id="org" placeholder="e.g. Greenway Grid Ltd" />
-                </div>
-
-                <!-- Founder fields -->
-                <div id="founder-fields" class="grid grid-cols-1 sm:grid-cols-2 gap-3" style="display:grid;">
-                  <div>
-                    <label class="text-[12px] text-ink-muted mb-1.5 block">Stage</label>
-                    <select>
-                      <option>Pre-Seed</option>
-                      <option selected>Seed</option>
-                      <option>Series A</option>
-                      <option>Later</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label class="text-[12px] text-ink-muted mb-1.5 block">Raise size</label>
-                    <select>
-                      <option>£250k–£500k</option>
-                      <option selected>£500k–£1M</option>
-                      <option>£1M–£3M</option>
-                      <option>£3M–£10M</option>
-                    </select>
-                  </div>
-                </div>
-
-                <!-- VC fields -->
-                <div id="vc-fields" class="grid grid-cols-1 sm:grid-cols-2 gap-3" style="display:none;">
-                  <div>
-                    <label class="text-[12px] text-ink-muted mb-1.5 block">Investor type</label>
-                    <select>
-                      <option selected>VC fund</option>
-                      <option>Angel</option>
-                      <option>Family office</option>
-                      <option>Corporate VC</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label class="text-[12px] text-ink-muted mb-1.5 block">Cheque size</label>
-                    <select>
-                      <option>£25k–£100k</option>
-                      <option selected>£100k–£500k</option>
-                      <option>£500k–£2M</option>
-                      <option>£2M+</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <button type="submit" class="btn-terra w-full justify-center mt-5" id="submit-btn">
-                <span id="submit-label">Join the waitlist</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14M13 5l7 7-7 7" />
-                </svg>
-              </button>
-            </form>
-
-            <!-- Success state -->
-            <div id="success" class="hidden text-center py-8">
-              <div class="inline-flex w-12 h-12 rounded-full items-center justify-center mb-4"
-                style="background: rgba(125, 179, 160, 0.18);">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7DB3A0" stroke-width="2.4"
+          <ul class="waitlist-benefits">
+            <li>
+              <span class="list-icon list-icon--pos">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"
                   stroke-linecap="round" stroke-linejoin="round">
                   <path d="M5 12l5 5 9-11" />
                 </svg>
-              </div>
-              <div class="font-sans text-[22px] font-medium tracking-tighter mb-2">You're on the list.</div>
-              <p class="text-[14px] text-ink-muted">We'll be in touch when onboarding opens. Expect an invite within a
-                few weeks.</p>
+              </span>
+              Priority matching weight at launch
+            </li>
+            <li>
+              <span class="list-icon list-icon--pos">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12l5 5 9-11" />
+                </svg>
+              </span>
+              Three months free on any paid tier
+            </li>
+            <li>
+              <span class="list-icon list-icon--pos">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12l5 5 9-11" />
+                </svg>
+              </span>
+              Founder and investor onboarding handled separately
+            </li>
+          </ul>
+
+          <div class="secure-notice">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" />
+              <path d="M7 11V7a5 5 0 0110 0v4" />
+            </svg>
+            <div>
+              <div class="secure-title">Secure investor onboarding</div>
+              <div class="secure-body">All data is encrypted end-to-end. FCA-aligned handling. UK-hosted.</div>
             </div>
+          </div>
+        </div>
+
+        <div class="waitlist-form-card">
+          <div class="form-card-head">
+            <div class="tabs" role="tablist" data-active="founder">
+              <span class="tabs-thumb" aria-hidden="true"></span>
+              <button id="tab-founder" class="tab-btn active" data-tab="founder" type="button">I'm a founder</button>
+              <button id="tab-vc" class="tab-btn" data-tab="vc" type="button">I'm an investor</button>
+            </div>
+          </div>
+
+          <form id="waitlist-form" class="form-card-body" novalidate>
+            <div class="overline" id="form-label">Founder application · 30 seconds</div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">Work email <span class="req">*</span></label>
+              <input type="email" id="email" required placeholder="you@company.co.uk" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" id="org-label" for="org">Company name</label>
+              <input type="text" id="org" placeholder="e.g. Greenway Grid Ltd" />
+            </div>
+
+            <!-- Founder fields -->
+            <div id="founder-fields" class="form-row">
+              <div class="form-group">
+                <label class="form-label">Stage</label>
+                <select>
+                  <option>Pre-Seed</option>
+                  <option selected>Seed</option>
+                  <option>Series A</option>
+                  <option>Later</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Raise target</label>
+                <select>
+                  <option>£250k – £500k</option>
+                  <option selected>£500k – £1M</option>
+                  <option>£1M – £3M</option>
+                  <option>£3M – £10M</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- VC fields -->
+            <div id="vc-fields" class="form-row" style="display:none;">
+              <div class="form-group">
+                <label class="form-label">Investor type</label>
+                <select>
+                  <option selected>VC fund</option>
+                  <option>Angel</option>
+                  <option>Family office</option>
+                  <option>Corporate VC</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Typical cheque</label>
+                <select>
+                  <option>£25k – £100k</option>
+                  <option selected>£100k – £500k</option>
+                  <option>£500k – £2M</option>
+                  <option>£2M+</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg form-submit" id="submit-btn">
+              <span id="submit-label">Request early access</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            <p class="form-foot">No spam. Unsubscribe any time. GDPR compliant.</p>
+          </form>
+
+          <div id="success" class="form-success" style="display:none;">
+            <div class="success-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12l5 5 9-11" />
+              </svg>
+            </div>
+            <div class="success-title">You're on the list.</div>
+            <p class="success-body">We'll be in touch when onboarding opens for your cohort. Expect an invitation within
+              a few weeks.</p>
           </div>
         </div>
       </div>
@@ -747,39 +835,29 @@
   </section>
 
   <!-- ====================== FOOTER ====================== -->
-  <footer class="hair-t bg-base">
-    <div class="max-w-[1240px] mx-auto px-6 lg:px-8 pt-14 pb-8">
+  <footer class="site-footer">
+    <div class="container">
       <div class="footer-grid">
-        <div>
-          <div class="flex items-center gap-2.5 mb-4">
-            <svg width="28" height="26" viewBox="0 0 56 52" fill="none" xmlns="http://www.w3.org/2000/svg"
+        <div class="footer-brand">
+          <a href="#top" class="brand">
+            <svg width="26" height="24" viewBox="0 0 56 52" fill="none" xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true">
-              <defs>
-                <linearGradient id="vaGrad2" x1="0" y1="0" x2="56" y2="52" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#D4956A" />
-                  <stop offset="55%" stop-color="#C4B56A" />
-                  <stop offset="100%" stop-color="#7DB3A0" />
-                </linearGradient>
-              </defs>
               <path
                 d="M4 8 C 8 30, 18 46, 24 46 C 30 46, 32 36, 30 28 L 24 12 L 36 38 C 38 44, 44 48, 50 44 C 54 41, 54 32, 48 22 C 42 12, 36 6, 30 8"
-                stroke="url(#vaGrad2)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                stroke="#00C9B1" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
             </svg>
-            <span class="font-sans font-medium text-[20px] tracking-tighter text-ink">VanAI</span>
-          </div>
-          <p class="text-[15px] text-ink-muted leading-[1.5] max-w-[320px] mb-5">
-            The Catalyst for Capital. AI for founders raising — and the VCs writing the cheques.
-          </p>
-          <div class="flex gap-2">
-            <a href="#" aria-label="LinkedIn"
-              class="w-9 h-9 rounded-full hair flex items-center justify-center text-ink-muted hover:text-terra hover:border-terra transition">
+            <span class="brand-name">Ven<span class="brand-name-accent">AI</span></span>
+          </a>
+          <p class="footer-tag">The Catalyst for Capital.<br />Private capital infrastructure for founders and
+            institutional investors.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn" class="social-btn">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                 <path
                   d="M4 4h4v16H4zM6 2.5A2 2 0 0 1 8 4.5 2 2 0 1 1 6 2.5zM10 8h4v2c.7-1.3 2-2.3 4-2.3 4 0 4 3 4 5.5V20h-4v-6c0-1.5 0-3-2-3s-2 1.5-2 3v6h-4z" />
               </svg>
             </a>
-            <a href="#" aria-label="X"
-              class="w-9 h-9 rounded-full hair flex items-center justify-center text-ink-muted hover:text-terra hover:border-terra transition">
+            <a href="#" aria-label="X" class="social-btn">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18 3h3l-7.5 8.6L22 21h-6.8l-5.3-6.4L3.8 21H1l8-9.2L1 3h7l4.8 5.9L18 3z" />
               </svg>
@@ -787,38 +865,41 @@
           </div>
         </div>
 
-        <div>
-          <div class="overline mb-4">Product</div>
-          <div class="space-y-2.5 text-[14px] text-ink-muted">
-            <a href="#features" class="block ulink hover:text-ink">Pitch Roast</a>
-            <a href="#features" class="block ulink hover:text-ink">Predictive Matchmaking</a>
-            <a href="#features" class="block ulink hover:text-ink">AI Deal Desk</a>
-            <a href="#waitlist" class="block ulink hover:text-ink">Early access</a>
-          </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Platform</div>
+          <a href="#platform" class="footer-link">Pitch Diagnostics</a>
+          <a href="#platform" class="footer-link">Financial Modelling</a>
+          <a href="#platform" class="footer-link">Relevancy Matching</a>
+          <a href="#platform" class="footer-link">Proposal Builder</a>
+          <a href="#platform" class="footer-link">Deal Desk</a>
         </div>
 
-        <div>
-          <div class="overline mb-4">Legal</div>
-          <div class="space-y-2.5 text-[14px] text-ink-muted">
-            <a href="#" class="block ulink hover:text-ink">Privacy policy</a>
-            <a href="#" class="block ulink hover:text-ink">Terms of service</a>
-            <a href="#" class="block ulink hover:text-ink">GDPR</a>
-            <a href="#" class="block ulink hover:text-ink">FCA disclaimer</a>
-          </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Company</div>
+          <a href="#approach" class="footer-link">Our approach</a>
+          <a href="#market" class="footer-link">Market</a>
+          <a href="#waitlist" class="footer-link">Early access</a>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Legal</div>
+          <a href="#" class="footer-link">Privacy policy</a>
+          <a href="#" class="footer-link">Terms of service</a>
+          <a href="#" class="footer-link">GDPR</a>
+          <a href="#" class="footer-link">FCA disclaimer</a>
         </div>
       </div>
 
-      <div class="mt-12 pt-6 hair-t flex flex-wrap items-start justify-between gap-4">
-        <div class="mono-cap">© 2026 VanAI Ltd · Built in the UK</div>
-        <div class="text-[12px] text-ink-subtle max-w-[520px] leading-[1.5]">
-          VanAI is an introduction and tooling platform. We do not provide financial, investment, or tax advice.
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 VenAI Ltd. Built in the United Kingdom.</div>
+        <p class="footer-disclaimer">
+          VenAI is an introduction and tooling platform. We do not provide financial, investment or tax advice.
           Investment involves risk and your capital is at risk.
-        </div>
+        </p>
       </div>
     </div>
   </footer>
 
-  <!-- External interactivity -->
   <script src="script.js" defer></script>
 </body>
 
