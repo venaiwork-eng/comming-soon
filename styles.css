@@ -1,0 +1,529 @@
+/* ==========================================================================
+   VanAI — Warm Slate styles
+   Font system per warm_slate_typography:
+     - Inter (sans, workhorse: UI, body, headings)
+     - Lora (display serif, used italic for hero / accent words / pull quotes)
+     - JetBrains Mono (token names, hex, code)
+   ========================================================================== */
+
+:root {
+  /* ---- Colour tokens ---- */
+  --ws-bg-base:        #1C1917;
+  --ws-bg-surface:     #2D2925;
+  --ws-bg-raised:      #3A3530;
+  --ws-bg-overlay:     #4A4540;
+  --ws-border:         #3A3530;
+
+  --ws-text-primary:   #F2EFE9;
+  --ws-text-secondary: #C8C3BC;
+  --ws-text-muted:     #9E9892;
+  --ws-text-subtle:    #6B6560;
+
+  --ws-accent-terra:         #D4956A;
+  --ws-accent-terra-deep:    #3A2E28;
+  --ws-accent-sage:          #7DB3A0;
+  --ws-accent-sage-deep:     #222C28;
+  --ws-accent-straw:         #C4B56A;
+  --ws-accent-straw-deep:    #2E2C22;
+  --ws-accent-crimson:       #C47A6A;
+  --ws-accent-crimson-deep:  #2E2322;
+
+  /* ---- Typography tokens (warm slate) ---- */
+  --ws-font-sans:  'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ws-font-serif: 'Lora', Georgia, 'Iowan Old Style', serif;
+  --ws-font-mono:  'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, monospace;
+
+  --ws-text-display:  32px;   /* serif italic · hero accents */
+  --ws-text-h1:       22px;
+  --ws-text-h2:       18px;
+  --ws-text-h3:       15px;
+  --ws-text-body:     14px;
+  --ws-text-label:    13px;
+  --ws-text-overline: 11px;   /* uppercase · ls .1em */
+  --ws-text-mono:     11px;
+
+  --ws-weight-regular: 400;
+  --ws-weight-medium:  500;
+
+  --ws-leading-tight: 1.3;
+  --ws-leading-body:  1.7;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  background: var(--ws-bg-base);
+  color: var(--ws-text-primary);
+  font-family: var(--ws-font-sans);
+  font-size: var(--ws-text-body);
+  line-height: var(--ws-leading-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body { margin: 0; }
+
+::selection {
+  background: rgba(212, 149, 106, 0.25);
+  color: var(--ws-text-primary);
+}
+
+a { color: inherit; text-decoration: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: var(--ws-font-sans);
+  font-weight: var(--ws-weight-medium);
+  line-height: var(--ws-leading-tight);
+  letter-spacing: -0.02em;
+  color: var(--ws-text-primary);
+}
+p { margin: 0; }
+
+/* ==========================================================================
+   Hairline borders
+   ========================================================================== */
+.hair   { border:        1px solid var(--ws-border); }
+.hair-t { border-top:    1px solid var(--ws-border); }
+.hair-b { border-bottom: 1px solid var(--ws-border); }
+.hair-l { border-left:   1px solid var(--ws-border); }
+.hair-r { border-right:  1px solid var(--ws-border); }
+
+/* ==========================================================================
+   Typography utilities
+   ========================================================================== */
+
+/* Hero display heading */
+.t-display {
+  font-family: var(--ws-font-sans);
+  font-weight: var(--ws-weight-medium);
+  font-size: clamp(52px, 8.5vw, 104px);
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+  color: var(--ws-text-primary);
+}
+
+/* Section H2 */
+.t-section {
+  font-family: var(--ws-font-sans);
+  font-weight: var(--ws-weight-medium);
+  font-size: clamp(32px, 4.5vw, 48px);
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  color: var(--ws-text-primary);
+}
+
+/* Italic display accent inside headings (Lora) */
+.ital {
+  font-family: var(--ws-font-serif);
+  font-style: italic;
+  font-weight: var(--ws-weight-regular);
+  letter-spacing: -0.01em;
+}
+
+/* Large metric number */
+.t-metric {
+  font-family: var(--ws-font-sans);
+  font-weight: var(--ws-weight-medium);
+  font-size: clamp(38px, 5vw, 56px);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  color: var(--ws-text-primary);
+}
+
+/* Lede paragraph under section H2 */
+.t-lede {
+  font-family: var(--ws-font-sans);
+  font-weight: var(--ws-weight-regular);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ws-text-muted);
+}
+
+/* Card / body copy */
+.t-body {
+  font-family: var(--ws-font-sans);
+  font-weight: var(--ws-weight-regular);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ws-text-secondary);
+}
+
+/* Card subtitle (between H3 and body) */
+.t-sub {
+  font-family: var(--ws-font-sans);
+  font-weight: var(--ws-weight-regular);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ws-text-muted);
+}
+
+/* Card heading H3 */
+.t-h3 {
+  font-family: var(--ws-font-sans);
+  font-weight: var(--ws-weight-medium);
+  font-size: clamp(22px, 2.4vw, 28px);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--ws-text-primary);
+}
+
+/* Form label */
+.t-form-label {
+  font-family: var(--ws-font-sans);
+  font-size: 12px;
+  font-weight: var(--ws-weight-medium);
+  color: var(--ws-text-muted);
+  letter-spacing: 0.005em;
+  margin-bottom: 7px;
+  display: block;
+}
+
+/* Overline (fix issue #1: lighter weight + Inter + ls .1em + subtle colour) */
+.overline {
+  font-family: var(--ws-font-sans);
+  font-size: var(--ws-text-overline);
+  font-weight: var(--ws-weight-medium);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ws-text-subtle);
+  line-height: 1.4;
+}
+
+/* Inline mono — captions, tokens, breadcrumb-ish */
+.mono-cap {
+  font-family: var(--ws-font-mono);
+  font-size: var(--ws-text-mono);
+  font-weight: var(--ws-weight-regular);
+  color: var(--ws-text-muted);
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Hero backdrop
+   ========================================================================== */
+.hero-grid-bg {
+  background-image:
+    linear-gradient(rgba(242, 239, 233, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242, 239, 233, 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 25%, transparent 80%);
+          mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 25%, transparent 80%);
+}
+
+.terra-sweep {
+  background: radial-gradient(ellipse 60% 60% at 20% 100%, rgba(212, 149, 106, 0.15), transparent 60%);
+}
+
+/* ==========================================================================
+   Reveal on scroll
+   ========================================================================== */
+section.reveal,
+.reveal-el {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 600ms cubic-bezier(0.2, 0, 0, 1),
+              transform 600ms cubic-bezier(0.2, 0, 0, 1);
+}
+section.reveal.in,
+.reveal-el.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   Pulse dot
+   ========================================================================== */
+.dot-pulse {
+  box-shadow: 0 0 0 0 rgba(212, 149, 106, 0.5);
+  animation: pulse 2.2s cubic-bezier(0.2, 0, 0, 1) infinite;
+}
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0    rgba(212, 149, 106, 0.5); }
+  70%  { box-shadow: 0 0 0 8px  rgba(212, 149, 106, 0);   }
+  100% { box-shadow: 0 0 0 0    rgba(212, 149, 106, 0);   }
+}
+
+/* ==========================================================================
+   Bento cells + grids
+   ========================================================================== */
+.bento-cell {
+  background: var(--ws-bg-surface);
+  border: 1px solid var(--ws-border);
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 200ms ease;
+}
+.bento-cell:hover { border-color: var(--ws-bg-overlay); }
+
+.bento-features {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+}
+.bento-features > .cell-1 { grid-row: 1 / 3; grid-column: 1; }
+.bento-features > .cell-2 { grid-row: 1;     grid-column: 2; }
+.bento-features > .cell-3 { grid-row: 2;     grid-column: 2; }
+@media (max-width: 900px) {
+  .bento-features {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  .bento-features > .cell-1,
+  .bento-features > .cell-2,
+  .bento-features > .cell-3 { grid-column: 1; grid-row: auto; }
+}
+
+.hero-bento {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 1024px) {
+  .hero-bento { grid-template-columns: 1fr; }
+}
+
+.reality {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+@media (max-width: 900px) {
+  .reality { grid-template-columns: 1fr; }
+  .reality > .side-old {
+    border-right: none !important;
+    border-bottom: 1px solid var(--ws-border);
+  }
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 900px) {
+  .metrics { grid-template-columns: 1fr 1fr; }
+  .metrics > div:nth-child(2) { border-right: none !important; }
+  .metrics > div:nth-child(1),
+  .metrics > div:nth-child(2) { border-bottom: 1px solid var(--ws-border); }
+}
+@media (max-width: 560px) {
+  .metrics { grid-template-columns: 1fr; }
+  .metrics > div {
+    border-right:  none !important;
+    border-bottom: 1px solid var(--ws-border);
+  }
+  .metrics > div:last-child { border-bottom: none; }
+}
+
+.waitlist-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 56px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .waitlist-grid { grid-template-columns: 1fr; gap: 36px; }
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 40px;
+}
+@media (max-width: 700px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.btn-terra,
+.btn-ghost {
+  font-family: var(--ws-font-sans);
+  font-weight: var(--ws-weight-medium);
+  font-size: 14px;
+  letter-spacing: -0.005em;
+  line-height: 1;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 150ms ease, background 200ms ease,
+              box-shadow 200ms ease, border-color 200ms ease, color 200ms ease;
+}
+
+.btn-terra {
+  background: var(--ws-accent-terra);
+  color: var(--ws-bg-base);
+  border: 0;
+  padding: 13px 20px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2),
+              0 6px 22px rgba(212, 149, 106, 0.12);
+}
+.btn-terra:hover  { background: #c4855a; transform: translateY(-1px); }
+.btn-terra:active { transform: translateY(0); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ws-text-primary);
+  border: 1px solid var(--ws-border);
+  padding: 12px 18px;
+}
+.btn-ghost:hover {
+  border-color: var(--ws-accent-terra);
+  color: var(--ws-accent-terra);
+}
+
+.btn-sm { padding: 10px 14px; font-size: 13px; }
+
+/* ==========================================================================
+   Pills + tags
+   ========================================================================== */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px 5px 8px;
+  border-radius: 9999px;
+  background: var(--ws-bg-surface);
+  border: 1px solid var(--ws-border);
+  font-family: var(--ws-font-sans);
+  font-size: 12px;
+  color: var(--ws-text-muted);
+}
+
+.pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  display: inline-block;
+}
+
+/* ---- pill-tag: STANDALONE (fix issue #3) ----
+   Works whether or not it's nested in `.pill`. */
+.pill-tag {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--ws-font-sans);
+  font-size: 10px;
+  font-weight: var(--ws-weight-medium);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--ws-accent-terra);
+  color: var(--ws-bg-base);
+  padding: 5px 10px;
+  border-radius: 9999px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.pill-tag--sage    { background: var(--ws-accent-sage);    color: var(--ws-bg-base); }
+.pill-tag--straw   { background: var(--ws-accent-straw);   color: var(--ws-bg-base); }
+.pill-tag--crimson { background: var(--ws-accent-crimson); color: var(--ws-bg-base); }
+.pill-tag--old     { background: var(--ws-accent-crimson-deep); color: var(--ws-accent-crimson); }
+.pill-tag--new     { background: var(--ws-accent-terra-deep);   color: var(--ws-accent-terra); }
+.pill-tag--ghost   { background: var(--ws-bg-raised);          color: var(--ws-text-muted);    }
+
+/* Underline-on-hover link */
+.ulink {
+  position: relative;
+  color: var(--ws-text-primary);
+}
+.ulink::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 250ms cubic-bezier(0.2, 0, 0, 1);
+}
+.ulink:hover::after { transform: scaleX(1); }
+
+/* ==========================================================================
+   Window chrome dots
+   ========================================================================== */
+.chrome-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 9999px;
+  display: inline-block;
+}
+
+/* ==========================================================================
+   Form inputs (fix issue #2: explicit height for input == select)
+   ========================================================================== */
+input[type=email],
+input[type=text],
+select {
+  width: 100%;
+  height: 42px;
+  padding: 0 14px;
+  background: var(--ws-bg-base);
+  border: 1px solid var(--ws-border);
+  border-radius: 10px;
+  color: var(--ws-text-primary);
+  font-family: var(--ws-font-sans);
+  font-size: 14px;
+  font-weight: var(--ws-weight-regular);
+  line-height: 1.2;
+  outline: 0;
+  box-sizing: border-box;
+  transition: border-color 150ms ease;
+}
+
+input:focus,
+select:focus { border-color: var(--ws-accent-terra); }
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 36px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239E9892' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+::placeholder { color: var(--ws-text-subtle); }
+
+/* Tab toggle */
+.tabs {
+  display: inline-flex;
+  padding: 4px;
+  background: var(--ws-bg-base);
+  border: 1px solid var(--ws-border);
+  border-radius: 9999px;
+}
+.tabs button {
+  font-family: var(--ws-font-sans);
+  font-size: 13px;
+  font-weight: var(--ws-weight-medium);
+  padding: 9px 18px;
+  border: 0;
+  cursor: pointer;
+  border-radius: 9999px;
+  background: transparent;
+  color: var(--ws-text-muted);
+  transition: background 180ms ease, color 180ms ease;
+  line-height: 1;
+}
+.tabs button.active {
+  background: var(--ws-accent-terra);
+  color: var(--ws-bg-base);
+}
+
+.vdiv {
+  width: 1px;
+  background: var(--ws-border);
+}
