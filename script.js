@@ -29,7 +29,7 @@
           }
         });
       },
-      { threshold: 0.08, rootMargin: "0px 0px -60px 0px" }
+      { threshold: 0.08, rootMargin: "0px 0px -60px 0px" },
     );
 
     document.querySelectorAll("section").forEach(function (s) {
@@ -58,16 +58,24 @@
     if (tabFounder) tabFounder.classList.toggle("active", isFounder);
     if (tabVC) tabVC.classList.toggle("active", !isFounder);
 
-    if (founderFields) founderFields.style.display = isFounder ? "grid" : "none";
+    if (founderFields)
+      founderFields.style.display = isFounder ? "grid" : "none";
     if (vcFields) vcFields.style.display = isFounder ? "none" : "grid";
 
-    if (orgLabel) orgLabel.textContent = isFounder ? "Company name" : "Fund or syndicate name";
-    if (orgInput) orgInput.placeholder = isFounder ? "e.g. Greenway Grid Ltd" : "e.g. Alder Park Ventures";
-    if (emailInput) emailInput.placeholder = isFounder ? "you@company.co.uk" : "you@fund.com";
+    if (orgLabel)
+      orgLabel.textContent = isFounder
+        ? "Company name"
+        : "Fund or syndicate name";
+    if (orgInput)
+      orgInput.placeholder = isFounder
+        ? "e.g. Greenway Grid Ltd"
+        : "e.g. Alder Park Ventures";
+    if (emailInput)
+      emailInput.placeholder = isFounder ? "you@company.co.uk" : "you@fund.com";
     if (formLabel) {
       formLabel.textContent = isFounder
-        ? "Founder application · 30 seconds"
-        : "Investor application · 30 seconds";
+        ? "Founder application"
+        : "Investor application";
     }
     if (submitLabel) {
       submitLabel.textContent = isFounder
@@ -77,8 +85,12 @@
   }
 
   if (tabFounder && tabVC) {
-    tabFounder.addEventListener("click", function () { setTab("founder"); });
-    tabVC.addEventListener("click", function () { setTab("vc"); });
+    tabFounder.addEventListener("click", function () {
+      setTab("founder");
+    });
+    tabVC.addEventListener("click", function () {
+      setTab("vc");
+    });
   }
 
   /* ---- Waitlist form submit (client-side only, no backend) ---- */
