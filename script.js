@@ -6,6 +6,24 @@
 (function () {
   "use strict";
 
+  /* ---- Dark mode toggle (initial theme already applied in <head>) ---- */
+  var themeToggle = document.getElementById("theme-toggle");
+  if (themeToggle) {
+    themeToggle.addEventListener("click", function () {
+      var isDark =
+        document.documentElement.getAttribute("data-theme") === "dark";
+      var next = isDark ? "light" : "dark";
+      if (next === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+      }
+      try {
+        localStorage.setItem("venai-theme", next);
+      } catch (e) {}
+    });
+  }
+
   /* ---- Smooth in-page anchor scroll ---- */
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
     a.addEventListener("click", function (e) {
@@ -38,62 +56,7 @@
     });
   }
 
-  /* ---- Waitlist tabs (founder / investor) — sliding pill ---- */
-  var tabsWrap = document.querySelector(".tabs");
-  var tabFounder = document.getElementById("tab-founder");
-  var tabVC = document.getElementById("tab-vc");
-  var founderFields = document.getElementById("founder-fields");
-  var vcFields = document.getElementById("vc-fields");
-  var orgLabel = document.getElementById("org-label");
-  var formLabel = document.getElementById("form-label");
-  var emailInput = document.getElementById("email");
-  var orgInput = document.getElementById("org");
-  var submitLabel = document.getElementById("submit-label");
-
-  function setTab(which) {
-    var isFounder = which === "founder";
-
-    if (tabsWrap) tabsWrap.setAttribute("data-active", which);
-
-    if (tabFounder) tabFounder.classList.toggle("active", isFounder);
-    if (tabVC) tabVC.classList.toggle("active", !isFounder);
-
-    if (founderFields)
-      founderFields.style.display = isFounder ? "grid" : "none";
-    if (vcFields) vcFields.style.display = isFounder ? "none" : "grid";
-
-    if (orgLabel)
-      orgLabel.textContent = isFounder
-        ? "Company name"
-        : "Fund or syndicate name";
-    if (orgInput)
-      orgInput.placeholder = isFounder
-        ? "e.g. Greenway Grid Ltd"
-        : "e.g. Alder Park Ventures";
-    if (emailInput)
-      emailInput.placeholder = isFounder ? "you@company.co.uk" : "you@fund.com";
-    if (formLabel) {
-      formLabel.textContent = isFounder
-        ? "Founder application"
-        : "Investor application";
-    }
-    if (submitLabel) {
-      submitLabel.textContent = isFounder
-        ? "Request early access"
-        : "Apply as an investor";
-    }
-  }
-
-  if (tabFounder && tabVC) {
-    tabFounder.addEventListener("click", function () {
-      setTab("founder");
-    });
-    tabVC.addEventListener("click", function () {
-      setTab("vc");
-    });
-  }
-
-  /* ---- Waitlist form submit → Google Apps Script web app ---- */
+  /* ---- Founder application form → Google Apps Script web app ---- */
   // Paste the /exec URL you got after deploying Code.gs as a Web App.
   var SHEET_ENDPOINT =
     "https://script.google.com/macros/s/AKfycbw5Nmt2Wh3eoh1nxc8AKpAaNuN6jKE2r6InsOBAZ9qk0RF-g2VnnUHR6_Yq35m4FK05/exec";
@@ -101,6 +64,9 @@
   var form = document.getElementById("waitlist-form");
   var success = document.getElementById("success");
   var submitBtn = document.getElementById("submit-btn");
+  var submitLabel = document.getElementById("submit-label");
+  var emailInput = document.getElementById("email");
+  var orgInput = document.getElementById("org");
 
   function flagInvalid(input) {
     input.style.borderColor = "#E84855";
@@ -113,36 +79,20 @@
     });
   }
 
-  function getActiveTab() {
-    return tabsWrap && tabsWrap.getAttribute("data-active") === "vc"
-      ? "vc"
-      : "founder";
-  }
-
   function collectPayload() {
-    var tab = getActiveTab();
-    var base = {
-      type: tab, // "founder" or "vc"
+    var stage = document.getElementById("stage");
+    var raise = document.getElementById("raise");
+    return {
+      type: "founder",
       email: emailInput ? emailInput.value.trim() : "",
       org: orgInput ? orgInput.value.trim() : "",
+      stage: stage ? stage.value : "",
+      raise: raise ? raise.value : "",
       submittedAt: new Date().toISOString(),
       userAgent: navigator.userAgent,
       referrer: document.referrer || "",
       pageUrl: location.href,
     };
-
-    if (tab === "founder") {
-      var stage = document.getElementById("stage");
-      var raise = document.getElementById("raise");
-      base.stage = stage ? stage.value : "";
-      base.raise = raise ? raise.value : "";
-    } else {
-      var investorType = document.getElementById("investor-type");
-      var cheque = document.getElementById("cheque");
-      base.investorType = investorType ? investorType.value : "";
-      base.cheque = cheque ? cheque.value : "";
-    }
-    return base;
   }
 
   function setSubmitting(isSubmitting) {
@@ -166,7 +116,6 @@
   }
 
   function showError(message) {
-    // Lightweight inline error — replace with a toast/banner if you prefer.
     var existing = document.getElementById("form-error");
     if (existing) existing.remove();
     var div = document.createElement("div");
@@ -174,7 +123,7 @@
     div.style.cssText =
       "margin-top:12px;padding:10px 12px;border-radius:8px;background:#FDECEE;color:#9B2C36;font-size:13px;border:1px solid #F5C6CB;";
     div.textContent =
-      message || "We couldn't submit your request. Please try again.";
+      message || "We couldn't submit your application. Please try again.";
     if (form) form.appendChild(div);
   }
 
@@ -193,9 +142,7 @@
       var payload = collectPayload();
       setSubmitting(true);
 
-      // Important: Content-Type is text/plain (a "simple" CORS request),
-      // so the browser does NOT send an OPTIONS preflight. Apps Script
-      // doesn't handle OPTIONS, but it can read JSON from a text/plain body.
+      // Content-Type text/plain avoids a CORS preflight Apps Script can't handle.
       fetch(SHEET_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "text/plain;charset=utf-8" },

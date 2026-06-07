@@ -6,13 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VenAI — The Catalyst for Capital</title>
   <meta name="description"
-    content="VenAI connects growth-stage startups with the right institutional investors. AI-powered pitch diagnostics, predictive matchmaking, and a deal desk that translates the term sheet." />
+    content="VenAI is the agency that makes startup founders investment-ready. Pitch review, idea validation, investor-grade decks, competitor analysis and warm-fit VC introductions — done with you, end to end." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
+
+  <!-- Apply saved/system theme before paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('venai-theme');
+        if (!t) {
+          t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'light' : 'light';
+        }
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) { }
+    })();
+  </script>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -72,19 +85,32 @@
       </a>
 
       <nav class="nav-links">
-        <a href="#platform" class="nav-link">Platform</a>
-        <a href="#approach" class="nav-link">Approach</a>
-        <a href="#market" class="nav-link">Market</a>
-        <a href="#waitlist" class="nav-link">Access</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#approach" class="nav-link">How it works</a>
+        <a href="#market" class="nav-link">Why us</a>
+        <a href="#apply" class="nav-link">Apply</a>
       </nav>
 
       <div class="nav-cta">
         <span class="status-chip">
           <span class="status-dot"></span>
-          Private beta · UK
+          Now onboarding founders · UK
         </span>
-        <a href="#waitlist" class="btn btn-primary btn-sm">
-          Request access
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode"
+          title="Toggle dark mode">
+          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+          </svg>
+        </button>
+        <a href="#apply" class="btn btn-primary btn-sm">
+          Work with us
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
             stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14M13 5l7 7-7 7" />
@@ -105,25 +131,25 @@
       </div>
 
       <h1 class="display-1">
-        Match. Mitigate. <span class="display-italic">Multiply.</span>
+        Become <span class="display-italic">investment-ready.</span>
       </h1>
 
       <p class="hero-lede">
-        VenAI is a private capital marketplace built on rigorous, AI-driven analysis. We connect growth-stage founders
-        with the investors whose theses actually fit — and equip both sides with the diligence tooling to
-        close on better terms.
+        VenAI is the agency for founders raising their next round. We sharpen your pitch, validate your idea, build the
+        deck investors expect — and put you in front of the VCs who actually back companies like yours. Done with you,
+        end to end.
       </p>
 
       <div class="hero-actions">
-        <a href="#waitlist" class="btn btn-primary btn-lg">
-          Request early access
+        <a href="#apply" class="btn btn-primary btn-lg">
+          Apply to work with us
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
             stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14M13 5l7 7-7 7" />
           </svg>
         </a>
-        <a href="#platform" class="btn btn-secondary btn-lg">
-          See the platform
+        <a href="#services" class="btn btn-secondary btn-lg">
+          See what we do
         </a>
       </div>
 
@@ -132,62 +158,62 @@
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          UK-hosted infrastructure
+          Founder-only, no equity taken
         </span>
         <span class="trust-divider"></span>
-        <span class="trust-item">GDPR compliant</span>
+        <span class="trust-item">Fixed-scope engagements</span>
         <span class="trust-divider"></span>
-        <span class="trust-item">Companies House verified</span>
+        <span class="trust-item">UK-based team</span>
         <span class="trust-divider"></span>
-        <span class="trust-item">FCA-aligned data handling</span>
+        <span class="trust-item">Investor-grade output</span>
       </div>
 
-      <!-- Dashboard preview -->
+      <!-- Investment-readiness scorecard preview -->
       <div class="dashboard-preview">
         <div class="dashboard-chrome">
           <div class="chrome-left">
             <span class="chrome-dot chrome-dot--r"></span>
             <span class="chrome-dot chrome-dot--y"></span>
             <span class="chrome-dot chrome-dot--g"></span>
-            <span class="chrome-url">venai.app / matches</span>
+            <span class="chrome-url">VenAI · investment-readiness report</span>
           </div>
           <div class="chrome-right">
-            <span class="chrome-live"><span class="status-dot"></span> Live preview</span>
+            <span class="chrome-live"><span class="status-dot"></span> Founder engagement</span>
           </div>
         </div>
 
         <div class="dashboard-body">
           <div class="dashboard-header">
             <div>
-              <div class="overline">Match feed · Today</div>
-              <div class="dashboard-title">3 new investors matched for <span class="text-teal-dark">Greenway Grid</span>
+              <div class="overline">Readiness report · Week 4</div>
+              <div class="dashboard-title">Investment-ready: <span class="text-teal-dark">Greenway Grid</span>
               </div>
             </div>
             <div class="header-stats">
               <div class="header-stat">
                 <div class="header-stat-value">87<span class="header-stat-suffix">/100</span></div>
-                <div class="overline">Avg fit</div>
+                <div class="overline">Readiness</div>
               </div>
               <div class="header-stat">
-                <div class="header-stat-value">14</div>
-                <div class="overline">Active</div>
+                <div class="header-stat-value">6</div>
+                <div class="overline">VC fits</div>
               </div>
             </div>
           </div>
 
           <div class="match-grid">
-            <!-- Match card 1 — excellent -->
+            <!-- Workstream 1 — Pitch & positioning -->
             <div class="match-card match-card--featured">
               <div class="match-card-accent" style="background:#00C9B1;"></div>
               <div class="match-card-body">
                 <div class="match-card-head">
-                  <div class="tag tag-active">Startup pitch</div>
+                  <div class="tag tag-active">Delivered</div>
                   <div class="match-score-inline match-score-inline--excellent">94%</div>
                 </div>
-                <div class="match-card-title">Alder Park Ventures</div>
-                <div class="match-card-sub">Seed · Climate infra · London · £500k–£2M</div>
-                <p class="match-card-desc">Leads first cheques into climate infrastructure. Two existing portfolio
-                  companies in adjacent grid-tech.</p>
+                <div class="match-card-title">Pitch &amp; Positioning</div>
+                <div class="match-card-sub">Brand · One-liner · Tagline · 1-min pitch</div>
+                <p class="match-card-desc">A crisp narrative an investor grasps in thirty seconds — and a one-liner that
+                  earns the next meeting.</p>
 
                 <div class="match-bar">
                   <div class="match-bar-track">
@@ -197,69 +223,69 @@
 
                 <div class="metric-cells">
                   <div class="metric-cell">
-                    <div class="metric-value">98%</div>
-                    <div class="metric-label">Sector fit</div>
+                    <div class="metric-value">A+</div>
+                    <div class="metric-label">Narrative</div>
                   </div>
                   <div class="metric-cell">
-                    <div class="metric-value">92%</div>
-                    <div class="metric-label">Stage fit</div>
+                    <div class="metric-value">A</div>
+                    <div class="metric-label">Clarity</div>
                   </div>
                   <div class="metric-cell">
-                    <div class="metric-value">90%</div>
-                    <div class="metric-label">Thesis</div>
+                    <div class="metric-value">A</div>
+                    <div class="metric-label">Hook</div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Match card 2 — good -->
+            <!-- Workstream 2 — Validation & financials -->
             <div class="match-card">
               <div class="match-card-accent" style="background:#2B7FD4;"></div>
               <div class="match-card-body">
                 <div class="match-card-head">
-                  <div class="tag tag-review">Startup pitch</div>
-                  <div class="match-score-inline match-score-inline--good">86%</div>
+                  <div class="tag tag-review">In progress</div>
+                  <div class="match-score-inline match-score-inline--good">82%</div>
                 </div>
-                <div class="match-card-title">Northwall Capital</div>
-                <div class="match-card-sub">Seed · Generalist · Edinburgh</div>
-                <p class="match-card-desc">Generalist Seed fund with a recent climate carve-out. Cheque range overlaps
-                  yours.</p>
+                <div class="match-card-title">Validation &amp; Financials</div>
+                <div class="match-card-sub">Market fit · Unit economics · Model</div>
+                <p class="match-card-desc">Evidence the market is real and the numbers hold up — the proof investors
+                  ask for first.</p>
 
                 <div class="match-bar">
                   <div class="match-bar-track">
-                    <div class="match-bar-fill match-bar-fill--good" style="width:86%;"></div>
+                    <div class="match-bar-fill match-bar-fill--good" style="width:82%;"></div>
                   </div>
                 </div>
 
                 <div class="metric-cells">
                   <div class="metric-cell">
                     <div class="metric-value">88%</div>
-                    <div class="metric-label">Sector fit</div>
+                    <div class="metric-label">Market fit</div>
                   </div>
                   <div class="metric-cell">
-                    <div class="metric-value">85%</div>
-                    <div class="metric-label">Stage fit</div>
+                    <div class="metric-value">80%</div>
+                    <div class="metric-label">Economics</div>
                   </div>
                   <div class="metric-cell">
-                    <div class="metric-value">84%</div>
-                    <div class="metric-label">Thesis</div>
+                    <div class="metric-value">78%</div>
+                    <div class="metric-label">Model</div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Match card 3 — partial -->
+            <!-- Workstream 3 — Deck & investor matching -->
             <div class="match-card">
               <div class="match-card-accent" style="background:#F5A623;"></div>
               <div class="match-card-body">
                 <div class="match-card-head">
-                  <div class="tag tag-diligence">Startup pitch</div>
+                  <div class="tag tag-diligence">Next up</div>
                   <div class="match-score-inline match-score-inline--partial">79%</div>
                 </div>
-                <div class="match-card-title">Pavement Angels</div>
-                <div class="match-card-sub">Pre-Seed · EIS syndicate · Bristol</div>
-                <p class="match-card-desc">EIS-eligible syndicate of 14 operators. Smaller tickets but high signal
-                  quality.</p>
+                <div class="match-card-title">Deck &amp; VC Matching</div>
+                <div class="match-card-sub">Pitch deck · Competitor map · Intros</div>
+                <p class="match-card-desc">An investor-grade deck and a shortlist of VCs whose thesis fits your stage
+                  and sector.</p>
 
                 <div class="match-bar">
                   <div class="match-bar-track">
@@ -269,16 +295,16 @@
 
                 <div class="metric-cells">
                   <div class="metric-cell">
-                    <div class="metric-value">82%</div>
-                    <div class="metric-label">Sector fit</div>
+                    <div class="metric-value">10</div>
+                    <div class="metric-label">Slides</div>
                   </div>
                   <div class="metric-cell">
-                    <div class="metric-value">76%</div>
-                    <div class="metric-label">Stage fit</div>
+                    <div class="metric-value">5</div>
+                    <div class="metric-label">Rivals</div>
                   </div>
                   <div class="metric-cell">
-                    <div class="metric-value">79%</div>
-                    <div class="metric-label">Thesis</div>
+                    <div class="metric-value">6</div>
+                    <div class="metric-label">VC fits</div>
                   </div>
                 </div>
               </div>
@@ -290,20 +316,20 @@
     </div>
   </section>
 
-  <!-- ====================== PLATFORM / FEATURES ====================== -->
-  <section id="platform" class="section section--surface">
+  <!-- ====================== SERVICES ====================== -->
+  <section id="services" class="section section--surface">
     <div class="container">
       <div class="section-head">
-        <div class="eyebrow">Platform</div>
-        <h2 class="display-2">Five modules. <span class="display-italic">One closed round.</span></h2>
+        <div class="eyebrow">What we do</div>
+        <h2 class="display-2">Everything you need <span class="display-italic">to raise.</span></h2>
         <p class="section-lede">
-          A focused stack of AI-powered tools that compresses the fundraising cycle — from first pitch to signed term
-          sheet — without sacrificing institutional rigour.
+          Six services that take you from a rough idea to a fundable company. Pick the pieces you need, or run the full
+          programme — every deliverable is built to the standard investors expect.
         </p>
       </div>
 
       <div class="feature-grid">
-        <!-- 01 Pitch -->
+        <!-- 01 Pitch Review -->
         <article class="feature-card">
           <div class="feature-card-accent"></div>
           <div class="feature-card-body">
@@ -311,97 +337,171 @@
               <div class="feature-num">01</div>
               <div class="overline overline--teal">Pitch</div>
             </div>
-            <h3 class="feature-title">AI Pitch Diagnostics</h3>
+            <h3 class="feature-title">Pitch Review</h3>
             <p class="feature-desc">
-              Industry-standard interrogation of your deck's narrative, unit economics and market sizing. The AI
-              surfaces the questions an investor partner will actually ask — before they ask them.
+              We rebuild how you tell your story — so investors lean in within the first sentence and remember you after
+              the meeting.
             </p>
 
             <div class="feature-inset">
               <div class="inset-header">
-                <span class="overline">Pitch readiness</span>
-                <span class="tag tag-diligence">Needs work</span>
+                <span class="overline">What you get</span>
+                <span class="tag tag-active">5 deliverables</span>
               </div>
-              <div class="inset-metric">62<span class="inset-metric-suffix">/100</span></div>
-              <div class="inset-bars">
-                <div class="bar-row">
-                  <span class="bar-label">Narrative</span>
-                  <div class="match-bar-track">
-                    <div class="match-bar-fill match-bar-fill--good" style="width:71%;"></div>
-                  </div>
-                  <span class="bar-value">71</span>
-                </div>
-                <div class="bar-row">
-                  <span class="bar-label">Unit economics</span>
-                  <div class="match-bar-track">
-                    <div class="match-bar-fill match-bar-fill--low" style="width:48%;"></div>
-                  </div>
-                  <span class="bar-value">48</span>
-                </div>
-                <div class="bar-row">
-                  <span class="bar-label">Market sizing</span>
-                  <div class="match-bar-track">
-                    <div class="match-bar-fill match-bar-fill--partial" style="width:67%;"></div>
-                  </div>
-                  <span class="bar-value">67</span>
-                </div>
+              <div class="checklist">
+                <div class="check-item check-item--done"><span class="check-mark">✓</span>Brand positioning</div>
+                <div class="check-item check-item--done"><span class="check-mark">✓</span>One-liner, validated</div>
+                <div class="check-item check-item--done"><span class="check-mark">✓</span>Tagline</div>
+                <div class="check-item check-item--done"><span class="check-mark">✓</span>1-minute pitch</div>
+                <div class="check-item check-item--done"><span class="check-mark">✓</span>Problem statement</div>
               </div>
             </div>
           </div>
         </article>
 
-        <!-- 02 Forecasting -->
+        <!-- 02 Idea Validation -->
         <article class="feature-card">
           <div class="feature-card-accent feature-card-accent--navy"></div>
           <div class="feature-card-body">
             <div class="feature-meta">
               <div class="feature-num">02</div>
-              <div class="overline overline--navy">Forecasting</div>
+              <div class="overline overline--navy">Validation</div>
             </div>
-            <h3 class="feature-title">Financial Modelling</h3>
+            <h3 class="feature-title">Idea Validation</h3>
             <p class="feature-desc">
-              For early-stage companies without operating volume. Generate calibrated revenue, cohort and burn scenarios
-              benchmarked against the live state of your sector.
+              We pressure-test the business before an investor does — proving demand, mapping the path to revenue and
+              building a model that stands up to diligence.
             </p>
 
             <div class="feature-inset">
               <div class="inset-header">
-                <span class="overline">Projected ARR · 24mo</span>
-                <span class="tag tag-active">3 scenarios</span>
+                <span class="overline">What you get</span>
+                <span class="tag tag-active">5 deliverables</span>
               </div>
-              <div class="inset-metric">£2.4M<span class="inset-metric-suffix">base</span></div>
-              <div class="forecast-bars" aria-hidden="true">
-                <div class="forecast-bar" style="height:18%;"></div>
-                <div class="forecast-bar" style="height:26%;"></div>
-                <div class="forecast-bar" style="height:32%;"></div>
-                <div class="forecast-bar" style="height:44%;"></div>
-                <div class="forecast-bar" style="height:51%;"></div>
-                <div class="forecast-bar" style="height:62%;"></div>
-                <div class="forecast-bar forecast-bar--accent" style="height:74%;"></div>
-                <div class="forecast-bar forecast-bar--accent" style="height:88%;"></div>
+              <div class="checklist">
+                <div class="check-item check-item--done"><span class="check-mark">✓</span>Market-fit test</div>
+                <div class="check-item check-item--done"><span class="check-mark">✓</span>Product roadmap</div>
+                <div class="check-item check-item--done"><span class="check-mark">✓</span>Adoption rate</div>
+                <div class="check-item check-item--done"><span class="check-mark">✓</span>Unit economics</div>
+                <div class="check-item check-item--done"><span class="check-mark">✓</span>Financials</div>
               </div>
             </div>
           </div>
         </article>
 
-        <!-- 03 Matchmaking -->
+        <!-- 03 Pitch Deck -->
         <article class="feature-card">
           <div class="feature-card-accent"></div>
           <div class="feature-card-body">
             <div class="feature-meta">
               <div class="feature-num">03</div>
-              <div class="overline overline--teal">Matchmaking</div>
+              <div class="overline overline--teal">Deck</div>
             </div>
-            <h3 class="feature-title">Relevancy Algorithm</h3>
+            <h3 class="feature-title">Pitch Deck</h3>
             <p class="feature-desc">
-              Our internal matchmaking engine ranks every introduction by mutual fit — using the VC's stated thesis,
-              prior cheques and sector depth, weighted against your stage and capital ask.
+              A complete, investor-grade deck — designed, written and structured the way partners expect to read it.
+              Ready to send the moment a meeting lands.
             </p>
 
             <div class="feature-inset">
               <div class="inset-header">
-                <span class="overline">Top matches this week</span>
-                <span class="tag tag-active">14 active</span>
+                <span class="overline">Deck build · 10 of 10 slides</span>
+                <span class="tag tag-active">Ready to send</span>
+              </div>
+              <div class="checklist">
+                <div class="check-item check-item--done"><span class="check-mark">✓</span>Problem &amp; solution</div>
+                <div class="check-item check-item--done"><span class="check-mark">✓</span>Market &amp; traction</div>
+                <div class="check-item check-item--done"><span class="check-mark">✓</span>Business model</div>
+                <div class="check-item check-item--done"><span class="check-mark">✓</span>The ask</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 04 Competitor Analysis -->
+        <article class="feature-card">
+          <div class="feature-card-accent feature-card-accent--navy"></div>
+          <div class="feature-card-body">
+            <div class="feature-meta">
+              <div class="feature-num">04</div>
+              <div class="overline overline--navy">Landscape</div>
+            </div>
+            <h3 class="feature-title">Competitor Analysis</h3>
+            <p class="feature-desc">
+              A clear map of who else is in the market, where they fall short, and the wedge that makes you the better
+              bet — the slide investors scrutinise hardest.
+            </p>
+
+            <div class="feature-inset">
+              <div class="inset-header">
+                <span class="overline">Your edge vs the field</span>
+                <span class="tag tag-active">5 mapped</span>
+              </div>
+              <div class="chip-row">
+                <span class="vc-chip">
+                  <span class="vc-chip-bar"><span style="width:92%;"></span></span>
+                  <span class="vc-chip-name">Greenway</span>
+                  <span class="vc-chip-score">92</span>
+                </span>
+                <span class="vc-chip">
+                  <span class="vc-chip-bar"><span style="width:64%; background: var(--info);"></span></span>
+                  <span class="vc-chip-name">Rival A</span>
+                  <span class="vc-chip-score">64</span>
+                </span>
+                <span class="vc-chip">
+                  <span class="vc-chip-bar"><span style="width:51%; background: var(--warning);"></span></span>
+                  <span class="vc-chip-name">Rival B</span>
+                  <span class="vc-chip-score">51</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 05 Marketing Card -->
+        <article class="feature-card">
+          <div class="feature-card-accent"></div>
+          <div class="feature-card-body">
+            <div class="feature-meta">
+              <div class="feature-num">05</div>
+              <div class="overline overline--teal">Signal</div>
+            </div>
+            <h3 class="feature-title">Marketing Card</h3>
+            <p class="feature-desc">
+              A single, shareable card that leads with your strongest proof point — carrying the VenAI Verified mark, so
+              investors know the claims have been checked.
+            </p>
+
+            <div class="feature-inset">
+              <div class="inset-header">
+                <span class="overline">Highlight</span>
+                <span class="tag tag-funded">VenAI Verified</span>
+              </div>
+              <div class="inset-metric">3.4×<span class="inset-metric-suffix">YoY growth</span></div>
+              <p class="match-card-desc" style="margin-bottom:0;">The best thing about your business, surfaced and
+                verified — the one stat that makes an investor reply.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 06 Finding VCs -->
+        <article class="feature-card">
+          <div class="feature-card-accent feature-card-accent--navy"></div>
+          <div class="feature-card-body">
+            <div class="feature-meta">
+              <div class="feature-num">06</div>
+              <div class="overline overline--navy">Matching</div>
+            </div>
+            <h3 class="feature-title">Finding the Right VCs</h3>
+            <p class="feature-desc">
+              We shortlist investors whose thesis, stage and cheque size actually fit your business — so you pitch the
+              few who are likely to say yes, not the hundreds who won't.
+            </p>
+
+            <div class="feature-inset">
+              <div class="inset-header">
+                <span class="overline">Shortlisted for you</span>
+                <span class="tag tag-active">6 fits</span>
               </div>
               <div class="chip-row">
                 <span class="vc-chip">
@@ -414,83 +514,7 @@
                   <span class="vc-chip-name">Northwall</span>
                   <span class="vc-chip-score">86</span>
                 </span>
-                <span class="vc-chip">
-                  <span class="vc-chip-bar"><span style="width:79%;"></span></span>
-                  <span class="vc-chip-name">Pavement</span>
-                  <span class="vc-chip-score">79</span>
-                </span>
-                <span class="vc-chip vc-chip--muted">+ 11 more</span>
-              </div>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- 04 Deal Desk -->
-        <article class="feature-card feature-card--wide">
-          <div class="feature-card-accent"></div>
-          <div class="feature-card-body">
-            <div class="feature-meta">
-              <div class="feature-num">04</div>
-              <div class="overline overline--teal">Deal Desk</div>
-            </div>
-            <h3 class="feature-title">Legal Language Translator</h3>
-            <p class="feature-desc">
-              When deals approach signature, the term sheet, SHA and SPA arrive in dense legal language. The Deal Desk
-              decomposes every clause into plain English and flags the commercial mechanics — including the gotchas a
-              casual read will miss.
-            </p>
-
-            <div class="legal-grid">
-              <div class="legal-clause">
-                <div class="clause-head">
-                  <span class="overline">Clause 7.2</span>
-                  <span class="tag tag-closed">Founder-adverse</span>
-                </div>
-                <div class="clause-original">2× participating liquidation preference</div>
-                <div class="clause-plain">
-                  → On exit, the fund collects <strong>2× their cheque</strong> off the top, <em>then</em> shares the
-                  remainder pro rata. On a £4M exit of a £2M raise, founders receive ~<strong>£0</strong>.
-                </div>
-              </div>
-              <div class="legal-clause">
-                <div class="clause-head">
-                  <span class="overline">Clause 11.4</span>
-                  <span class="tag tag-active">Standard</span>
-                </div>
-                <div class="clause-original">Pro-rata participation rights</div>
-                <div class="clause-plain">
-                  → The investor reserves the right (not obligation) to maintain their ownership percentage by
-                  participating in your next round. Market standard.
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- 05 Proposal -->
-        <article class="feature-card feature-card--wide">
-          <div class="feature-card-accent feature-card-accent--navy"></div>
-          <div class="feature-card-body">
-            <div class="feature-meta">
-              <div class="feature-num">05</div>
-              <div class="overline overline--navy">Proposal</div>
-            </div>
-            <h3 class="feature-title">Proposal Builder</h3>
-            <p class="feature-desc">
-              A structured proposal generated alongside your pitch — capturing the operational, financial and legal
-              substance an investor needs to move to diligence with conviction.
-            </p>
-
-            <div class="feature-inset">
-              <div class="overline">Proposal sections · 8 of 11 complete</div>
-              <div class="checklist">
-                <div class="check-item check-item--done"><span class="check-mark">✓</span>Company overview</div>
-                <div class="check-item check-item--done"><span class="check-mark">✓</span>Market analysis</div>
-                <div class="check-item check-item--done"><span class="check-mark">✓</span>Financial projections</div>
-                <div class="check-item check-item--done"><span class="check-mark">✓</span>Cap table</div>
-                <div class="check-item"><span class="check-mark">○</span>Use of funds</div>
-                <div class="check-item"><span class="check-mark">○</span>Risk register</div>
+                <span class="vc-chip vc-chip--muted">+ 4 more</span>
               </div>
             </div>
           </div>
@@ -500,16 +524,16 @@
     </div>
   </section>
 
-  <!-- ====================== APPROACH / COMPARISON ====================== -->
+  <!-- ====================== APPROACH ====================== -->
   <section id="approach" class="section">
     <div class="container">
       <div class="section-head">
-        <div class="eyebrow">Our approach</div>
-        <h2 class="display-2">Built for institutional rigour. <span class="display-italic">Without the friction.</span>
+        <div class="eyebrow">How it works</div>
+        <h2 class="display-2">A senior team in your corner. <span class="display-italic">Not another tool.</span>
         </h2>
         <p class="section-lede">
-          Traditional fundraising costs founders months of runway and investors hours of low-signal inbound. VenAI
-          rebuilds the connective tissue.
+          Most founders raise the hard way — months lost to guesswork, a deck that doesn't land, and pitches to
+          investors who were never a fit. We replace that with a focused, done-with-you engagement.
         </p>
       </div>
 
@@ -517,7 +541,7 @@
         <div class="comparison-grid">
           <div class="comparison-side comparison-side--legacy">
             <div class="comparison-head">
-              <span class="tag tag-closed">The legacy path</span>
+              <span class="tag tag-closed">Raising on your own</span>
             </div>
             <ul class="comparison-list">
               <li>
@@ -528,8 +552,8 @@
                   </svg>
                 </span>
                 <div>
-                  <div class="list-title">6 months of manual sourcing</div>
-                  <div class="list-desc">Scraping LinkedIn, cold introductions, no signal on fit.</div>
+                  <div class="list-title">Months lost to guesswork</div>
+                  <div class="list-desc">Rewriting the deck again and again with no clear signal on what's wrong.</div>
                 </div>
               </li>
               <li>
@@ -540,8 +564,8 @@
                   </svg>
                 </span>
                 <div>
-                  <div class="list-title">Silent rejections without context</div>
-                  <div class="list-desc">No structured feedback. No learning between attempts.</div>
+                  <div class="list-title">A pitch that doesn't land</div>
+                  <div class="list-desc">No outside eye on the narrative, the numbers or the positioning.</div>
                 </div>
               </li>
               <li>
@@ -552,8 +576,8 @@
                   </svg>
                 </span>
                 <div>
-                  <div class="list-title">5% broker success fees</div>
-                  <div class="list-desc">Taken directly from the runway you just raised.</div>
+                  <div class="list-title">Spraying the wrong investors</div>
+                  <div class="list-desc">Cold-emailing hundreds of VCs who were never going to back your stage.</div>
                 </div>
               </li>
               <li>
@@ -564,8 +588,8 @@
                   </svg>
                 </span>
                 <div>
-                  <div class="list-title">£10k+ to interpret the term sheet</div>
-                  <div class="list-desc">Solicitor fees on every deal, often after key clauses are agreed.</div>
+                  <div class="list-title">Silent rejections, no feedback</div>
+                  <div class="list-desc">No learning between attempts — just the same result, again.</div>
                 </div>
               </li>
             </ul>
@@ -575,7 +599,7 @@
 
           <div class="comparison-side comparison-side--venai">
             <div class="comparison-head">
-              <span class="tag tag-active">The VenAI path</span>
+              <span class="tag tag-active">Raising with VenAI</span>
             </div>
             <ul class="comparison-list">
               <li>
@@ -586,8 +610,8 @@
                   </svg>
                 </span>
                 <div>
-                  <div class="list-title">Ranked matches in minutes</div>
-                  <div class="list-desc">Every introduction scored against the investor's actual thesis.</div>
+                  <div class="list-title">A clear, fixed-scope plan</div>
+                  <div class="list-desc">Know exactly what we'll deliver and by when, from day one.</div>
                 </div>
               </li>
               <li>
@@ -598,8 +622,9 @@
                   </svg>
                 </span>
                 <div>
-                  <div class="list-title">Structured pitch feedback</div>
-                  <div class="list-desc">Actionable diagnostics on narrative, financials and positioning.</div>
+                  <div class="list-title">An investor-grade pitch &amp; deck</div>
+                  <div class="list-desc">Narrative, financials and positioning rebuilt to the standard partners expect.
+                  </div>
                 </div>
               </li>
               <li>
@@ -610,8 +635,8 @@
                   </svg>
                 </span>
                 <div>
-                  <div class="list-title">Transparent flat-fee tiers</div>
-                  <div class="list-desc">No success fee, no equity dilution. Your round, your terms.</div>
+                  <div class="list-title">A shortlist of fitting VCs</div>
+                  <div class="list-desc">Pitch the handful of investors who actually back companies like yours.</div>
                 </div>
               </li>
               <li>
@@ -622,8 +647,8 @@
                   </svg>
                 </span>
                 <div>
-                  <div class="list-title">Term sheets decoded instantly</div>
-                  <div class="list-desc">Plain-English breakdown of every clause, gotcha-flagged.</div>
+                  <div class="list-title">Flat fee, no equity taken</div>
+                  <div class="list-desc">We work for you, on transparent pricing. Your round stays yours.</div>
                 </div>
               </li>
             </ul>
@@ -633,16 +658,16 @@
     </div>
   </section>
 
-  <!-- ====================== MARKET ====================== -->
+  <!-- ====================== WHY US / MARKET ====================== -->
   <section id="market" class="section section--surface">
     <div class="container">
       <div class="section-head">
-        <div class="eyebrow">Market opportunity</div>
-        <h2 class="display-2">A market gated by warm intros. <span class="display-italic">Rebuilt for signal.</span>
+        <div class="eyebrow">Why it matters</div>
+        <h2 class="display-2">A deep market. <span class="display-italic">Brutally hard to crack.</span>
         </h2>
         <p class="section-lede">
-          The UK is the deepest venture market in Europe. It is also the most relationship-gated — leaving capital and
-          conviction on opposite sides of an invisible wall.
+          The UK is the deepest venture market in Europe — but most rounds still hinge on a warm introduction and a
+          pitch that survives real scrutiny. Being investment-ready is the difference between a meeting and a pass.
         </p>
       </div>
 
@@ -688,16 +713,16 @@
     </div>
   </section>
 
-  <!-- ====================== WAITLIST ====================== -->
-  <section id="waitlist" class="section">
+  <!-- ====================== APPLY ====================== -->
+  <section id="apply" class="section">
     <div class="container">
       <div class="waitlist-grid">
         <div class="waitlist-intro">
-          <div class="eyebrow">Early access</div>
-          <h2 class="display-2">Be first. <span class="display-italic">Get matched earlier.</span></h2>
+          <div class="eyebrow">Work with us</div>
+          <h2 class="display-2">Ready to raise? <span class="display-italic">Let's get you there.</span></h2>
           <p class="section-lede">
-            VenAI is in final development ahead of UK launch in Autumn 2026. Request access to be onboarded in the first
-            cohort — with priority matching weight at launch and three months free on any paid tier.
+            Tell us about your company and where you are in the raise. We take on a limited number of founders at a time
+            — if there's a fit, we'll be in touch to scope an engagement.
           </p>
 
           <ul class="waitlist-benefits">
@@ -708,7 +733,7 @@
                   <path d="M5 12l5 5 9-11" />
                 </svg>
               </span>
-              Priority matching weight at launch
+              A free 30-minute readiness review
             </li>
             <li>
               <span class="list-icon list-icon--pos">
@@ -717,7 +742,7 @@
                   <path d="M5 12l5 5 9-11" />
                 </svg>
               </span>
-              Three months free on any paid tier
+              A fixed-scope plan with clear deliverables
             </li>
             <li>
               <span class="list-icon list-icon--pos">
@@ -726,7 +751,7 @@
                   <path d="M5 12l5 5 9-11" />
                 </svg>
               </span>
-              Founder and investor onboarding handled separately
+              No equity taken — flat, transparent pricing
             </li>
           </ul>
 
@@ -737,21 +762,13 @@
               <path d="M7 11V7a5 5 0 0110 0v4" />
             </svg>
             <div>
-              <div class="secure-title">Secure investor onboarding</div>
-              <div class="secure-body">All data is encrypted end-to-end. FCA-aligned handling. UK-hosted.</div>
+              <div class="secure-title">Your details stay private</div>
+              <div class="secure-body">We never share what you tell us. UK-based team, GDPR compliant.</div>
             </div>
           </div>
         </div>
 
         <div class="waitlist-form-card">
-          <div class="form-card-head">
-            <div class="tabs" role="tablist" data-active="founder">
-              <span class="tabs-thumb" aria-hidden="true"></span>
-              <button id="tab-founder" class="tab-btn active" data-tab="founder" type="button">I'm a founder</button>
-              <button id="tab-vc" class="tab-btn" data-tab="vc" type="button">I'm an investor</button>
-            </div>
-          </div>
-
           <form id="waitlist-form" class="form-card-body" novalidate>
             <div class="overline" id="form-label">Founder application</div>
 
@@ -765,11 +782,11 @@
               <input type="text" id="org" placeholder="e.g. Greenway Grid Ltd" />
             </div>
 
-            <!-- Founder fields -->
             <div id="founder-fields" class="form-row">
               <div class="form-group">
                 <label class="form-label" for="stage">Stage</label>
                 <select id="stage">
+                  <option>Idea / pre-product</option>
                   <option>Pre-Seed</option>
                   <option selected>Seed</option>
                   <option>Series A</option>
@@ -787,37 +804,15 @@
               </div>
             </div>
 
-            <!-- VC fields -->
-            <div id="vc-fields" class="form-row" style="display:none;">
-              <div class="form-group">
-                <label class="form-label" for="investor-type">Investor type</label>
-                <select id="investor-type">
-                  <option selected>VC fund</option>
-                  <option>Angel</option>
-                  <option>Family office</option>
-                  <option>Corporate VC</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="cheque">Typical cheque</label>
-                <select id="cheque">
-                  <option>£25k – £100k</option>
-                  <option selected>£100k – £500k</option>
-                  <option>£500k – £2M</option>
-                  <option>£2M+</option>
-                </select>
-              </div>
-            </div>
-
             <button type="submit" class="btn btn-primary btn-lg form-submit" id="submit-btn">
-              <span id="submit-label">Request early access</span>
+              <span id="submit-label">Apply to work with us</span>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5 12h14M13 5l7 7-7 7" />
               </svg>
             </button>
 
-            <p class="form-foot">No spam. Unsubscribe any time. GDPR compliant.</p>
+            <p class="form-foot">No spam. We'll only use this to follow up about your raise. GDPR compliant.</p>
           </form>
 
           <div id="success" class="form-success" style="display:none;">
@@ -827,9 +822,9 @@
                 <path d="M5 12l5 5 9-11" />
               </svg>
             </div>
-            <div class="success-title">You're on the list.</div>
-            <p class="success-body">We'll be in touch when onboarding opens for your cohort. Expect an invitation within
-              a few weeks.</p>
+            <div class="success-title">Application received.</div>
+            <p class="success-body">Thanks — we'll review your details and get back to you within a few working days to
+              book your readiness review.</p>
           </div>
         </div>
       </div>
@@ -850,8 +845,7 @@
             </svg>
             <span class="brand-name">Ven<span class="brand-name-accent">AI</span></span>
           </a>
-          <p class="footer-tag">The Catalyst for Capital.<br />Private capital infrastructure for founders and
-            investors.</p>
+          <p class="footer-tag">The Catalyst for Capital.<br />The agency that makes founders investment-ready.</p>
           <div class="footer-social">
             <a href="#" aria-label="LinkedIn" class="social-btn">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
@@ -868,19 +862,19 @@
         </div>
 
         <div class="footer-col">
-          <div class="footer-col-title">Platform</div>
-          <a href="#platform" class="footer-link">Pitch Diagnostics</a>
-          <a href="#platform" class="footer-link">Financial Modelling</a>
-          <a href="#platform" class="footer-link">Relevancy Matching</a>
-          <a href="#platform" class="footer-link">Proposal Builder</a>
-          <a href="#platform" class="footer-link">Deal Desk</a>
+          <div class="footer-col-title">Services</div>
+          <a href="#services" class="footer-link">Pitch Review</a>
+          <a href="#services" class="footer-link">Idea Validation</a>
+          <a href="#services" class="footer-link">Pitch Deck</a>
+          <a href="#services" class="footer-link">Competitor Analysis</a>
+          <a href="#services" class="footer-link">Finding VCs</a>
         </div>
 
         <div class="footer-col">
           <div class="footer-col-title">Company</div>
-          <a href="#approach" class="footer-link">Our approach</a>
-          <a href="#market" class="footer-link">Market</a>
-          <a href="#waitlist" class="footer-link">Early access</a>
+          <a href="#approach" class="footer-link">How it works</a>
+          <a href="#market" class="footer-link">Why us</a>
+          <a href="#apply" class="footer-link">Apply</a>
         </div>
 
         <div class="footer-col">
@@ -888,15 +882,14 @@
           <a href="#" class="footer-link">Privacy policy</a>
           <a href="#" class="footer-link">Terms of service</a>
           <a href="#" class="footer-link">GDPR</a>
-          <a href="#" class="footer-link">FCA disclaimer</a>
         </div>
       </div>
 
       <div class="footer-bottom">
         <div class="footer-copy">© 2026 VenAI Ltd. Built in the United Kingdom.</div>
         <p class="footer-disclaimer">
-          VenAI is an introduction and tooling platform. We do not provide financial, investment or tax advice.
-          Investment involves risk and your capital is at risk.
+          VenAI is a startup advisory agency. We help founders prepare to raise capital. We do not provide financial,
+          investment or tax advice, and we do not guarantee investment. Raising capital involves risk.
         </p>
       </div>
     </div>
