@@ -67,6 +67,30 @@
   var submitLabel = document.getElementById("submit-label");
   var emailInput = document.getElementById("email");
   var orgInput = document.getElementById("org");
+  var userTypeSelect = document.getElementById("user-type");
+  var orgLabel = document.getElementById("org-label");
+
+  function getSubmissionType() {
+    if (!userTypeSelect) return "founder";
+    return userTypeSelect.value === "investor" ? "vc" : "founder";
+  }
+
+  function updateFormForUserType() {
+    var isInvestor = getSubmissionType() === "vc";
+    if (orgLabel) {
+      orgLabel.textContent = isInvestor ? "Fund name" : "Company name";
+    }
+    if (orgInput) {
+      orgInput.placeholder = isInvestor
+        ? "e.g. Alder Park Ventures"
+        : "e.g. Greenway Grid Ltd";
+    }
+  }
+
+  if (userTypeSelect) {
+    userTypeSelect.addEventListener("change", updateFormForUserType);
+    updateFormForUserType();
+  }
 
   function flagInvalid(input) {
     input.style.borderColor = "#E84855";
@@ -80,14 +104,10 @@
   }
 
   function collectPayload() {
-    var stage = document.getElementById("stage");
-    var raise = document.getElementById("raise");
     return {
-      type: "founder",
+      type: getSubmissionType(),
       email: emailInput ? emailInput.value.trim() : "",
       org: orgInput ? orgInput.value.trim() : "",
-      stage: stage ? stage.value : "",
-      raise: raise ? raise.value : "",
       submittedAt: new Date().toISOString(),
       userAgent: navigator.userAgent,
       referrer: document.referrer || "",
@@ -123,7 +143,7 @@
     div.style.cssText =
       "margin-top:12px;padding:10px 12px;border-radius:8px;background:#FDECEE;color:#9B2C36;font-size:13px;border:1px solid #F5C6CB;";
     div.textContent =
-      message || "We couldn't submit your application. Please try again.";
+      message || "We couldn't submit your waitlist request. Please try again.";
     if (form) form.appendChild(div);
   }
 
